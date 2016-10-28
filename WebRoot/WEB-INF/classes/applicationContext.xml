@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<!-- 指定连接数据库的URL -->
+		<property name="url" value="jdbc:mysql://localhost:3306/bookflights" />
+		<!-- 指定连接数据库的用户名 -->
+		<property name="username" value="root" />
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="root" />
+	</bean>
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.connection.autocommit">true </prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="sql_format">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Dao配置 -->
+	<bean id="userDao" class="dao.Impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- Service配置 -->
+	<bean id="userService" class="service.Impl.UserServiceImpl">
+	 <property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userServer" class="action.LoginAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	
+</beans>
