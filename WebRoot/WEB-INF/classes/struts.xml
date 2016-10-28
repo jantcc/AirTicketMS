@@ -6,13 +6,20 @@
 <struts>
 	<package name="struts2" extends="struts-default">
 		<!-- 此处的class的内容要与Spring配置文件中的bean的id相同 -->
-		<action name="Login" class="userServer">
+		<action name="LoginServer" class="LoginServer">
 
-			<result name="success">/result.jsp</result>
+			<result name="Loginsuccess">/jsp/result.jsp</result>
 
-			<result name="input">/login.jsp</result>
+			<result name="Loginerror">/jsp/index.jsp</result>
 
 		</action>
+	
+			<action name="RegistServer" class="RegistServer">
 
+			<result name="Registsuccess">/index.jsp</result>
+
+			<result name="Registerror">/regist.jsp</result>
+
+		</action>
 	</package>
 </struts>

@@ -42,9 +42,11 @@
 	<bean id="userService" class="service.Impl.UserServiceImpl">
 	 <property name="userDao" ref="userDao"></property>
 	</bean>
-	<bean id="userServer" class="action.LoginAction" scope="prototype">
+	<bean id="LoginServer" class="action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	
+	<bean id="RegistServer" class="action.RegistAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
 	
 </beans>

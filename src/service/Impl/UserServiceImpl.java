@@ -21,6 +21,11 @@ public class UserServiceImpl implements UserService {
 		this.userDao.SaveUser(user);
 	}
 
+	public User FindUser(String username) {
+		// TODO Auto-generated method stub
+		return this.userDao.FindUser(username);
+	}
+
 
 
 }
