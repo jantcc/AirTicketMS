@@ -48,5 +48,7 @@
 	<bean id="RegistServer" class="action.RegistAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	
+	<bean id="UserActionServer" class="action.UserAction" scope="prototype">
+			<property name="userService" ref="userService"></property>
+	</bean>
 </beans>

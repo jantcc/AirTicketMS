@@ -32,10 +32,22 @@ public class UserDaoImpl implements UserDao {
 		Query query = session.createQuery(hql);
 		if(query.list().size()!=0){
 		User user = (User) query.list().get(0);
+		hu.closeSession(session);
 		return user;
 		}else{
+			hu.closeSession(session);
 			return null;
 		}
 	}
+	public void UpdateUser(User user) {
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		Transaction ts = session.beginTransaction();
+		session.update(user); //id设为隐藏域
+		ts.commit();
+		hu.closeSession(session);
+	}
+
+
 
 }

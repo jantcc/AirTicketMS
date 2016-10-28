@@ -26,6 +26,11 @@ public class UserServiceImpl implements UserService {
 		return this.userDao.FindUser(username);
 	}
 
+	public void UpdateUser(User user) {
+		// TODO Auto-generated method stub
+		this.userDao.UpdateUser(user);
+	}
+
 
 
 }
