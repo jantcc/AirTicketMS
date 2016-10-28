@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
