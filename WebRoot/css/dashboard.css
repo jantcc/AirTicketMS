@@ -211,6 +211,7 @@ label{
     text-align: center;
     margin: 0 auto;
     background-color: #0866c6;
+    cursor: pointer;
 }
 .submit-button > span {
     color: #fff;

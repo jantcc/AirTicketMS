@@ -1,0 +1,43 @@
+.form-addCompany1 {
+    float: left;
+    width: 380px;
+    height: 330px;
+    margin: 18px 0 0 100px;
+    border: 2px solid #0866c6;
+}
+
+.form-addCompany2 {
+    float: left;
+    width: 300px;
+    height: 280px;
+    margin: 18px 0 0 100px;
+    border: 2px solid #0866c6;
+}
+.form-addCompany1 p{
+    margin: 20px 0 0 14px;
+}
+.form-addCompany1 label{
+    display: inline-block;
+    width: 70px;
+}
+.form-addCompany1 input {
+    width: 200px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+
+.form-addCompany2 p{
+    margin: 28px 0 0 14px;
+}
+.form-addCompany2 label{
+    display: inline-block;
+    width: 70px;
+}
+.form-addCompany2 input {
+    width: 200px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+
