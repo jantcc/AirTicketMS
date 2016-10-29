@@ -1,0 +1,73 @@
+#select-company {
+    width: 250px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+.selectBox {
+    float: left;
+    position: relative;
+    width: 220px;
+    height: 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0 0 20px;
+    overflow: hidden;
+}
+.selectBox > .iconfont {
+    z-index: 20;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+.content-title > input {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.table-container {
+    width: 96%;
+    margin: 20px 0 0 20px;
+}
+.table-container-header {
+    height: 40px;
+    background-color: #0866c6;
+    line-height: 40px;
+}
+.table-container-header > span {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.table-form {
+    width: 100%;
+}
+.table-form td {
+    height: 34px;
+    border: 1px solid #dcdcdc;
+}
+
+.table-form tr:nth-of-type(1) > td {
+    border-top: 1px solid #333;
+    background-color: #333;
+}
+.table-form tr:nth-of-type(1) > td:nth-of-type(1) {
+    border-left: 1px solid #000;
+}
+.table-form tr:nth-of-type(1) > td:last-child {
+    border-right: 1px solid #000;
+}
+
+.table-form tr:nth-of-type(1) > td > span {
+    color: #fff;
+}
+
+.table-form span {
+    font-size:  12px;
+    margin-left: 10px;
+}
+.table-form .iconfont {
+    width: 20px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
