@@ -10,7 +10,7 @@ header {
 aside {
     float: left;
     width: 256px;
-    height: 600px;
+    height: 660px;
     background-color: #282828;
 }
 ul li {
@@ -20,7 +20,7 @@ a {
     text-decoration: none;
 }
 .content {
-    height: 600px;
+    height: 660px;
     margin-left: 256px;
     background-color: #f7f7f7;
 }
