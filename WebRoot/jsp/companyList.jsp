@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <head>
     <meta charset="UTF-8">
-    <title>addFlights</title>
+    <title>companyList</title>
     <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/addFlights.css">
+    <link rel="stylesheet" href="../css/companyList.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
@@ -66,51 +67,91 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>增加航班信息</span>
+            <span>增加航空公司</span>
         </div>
         <div class="content-title">
             <div class="flag">
                 <i class="iconfont">&#xe604;</i>
             </div>
-            <div class="title">
-                <h2>添加航班</h2>
-            </div>
             <div class="selectBox">
-                <select name="companyName" id="addFlights">
+                <select name="companyName" id="select-company">
                     <option value="中国国航">中国国航</option>
                     <option value="山东航空">山东航空</option>
                     <option value="四川航空">四川航空</option>
                 </select>
                 <i class="iconfont">&#xe615;</i>
             </div>
-            <input type="submit" class="addFlights-submit" value="提交">
+            <input type="submit" value="提交">
         </div>
 
+        <div class="table-container">
+            <div class="table-container-header"><span>(东方航空)已经拥有机型</span></div>
+            <table class="table-form" border = 0 cellspacing = 0 cellpadding = 0>
+                <tr>
+                    <td><span>机型ID</span></td>
+                    <td><span>机型号</span></td>
+                    <td><span>头等舱总数量</span></td>
+                    <td><span>公务舱总数量</span></td>
+                    <td><span>经济舱总数量</span></td>
+                    <td><span>操作</span></td>
+                </tr>
+                <tr>
+                    <td><span>41</span></td>
+                    <td><span>波音747-400</span></td>
+                    <td><span>12</span></td>
+                    <td><span>36</span></td>
+                    <td><span>70</span></td>
+                    <td><i class="iconfont">&#xe616;</i></td>
+                </tr>
+                <tr>
+                    <td><span>42</span></td>
+                    <td><span>A330-300</span></td>
+                    <td><span>22</span></td>
+                    <td><span>52</span></td>
+                    <td><span>150</span></td>
+                    <td><i class="iconfont">&#xe616;</i></td>
+                </tr>
 
-        <div class="addFlights-form">
-            <div class="form-header"><span>添加航空公司</span></div>
-            <p>
-                <label>航班号:</label> <input type="text">
-            </p>
-            <p>
-                <label>出发地:</label> <input type="text">
-            </p>
-            <p>
-                <label>到达地:</label> <input type="text">
-            </p>
-            <p>
-                <label>出发机场:</label> <input type="text">
-            </p>
-            <p>
-                <label>到达机场:</label> <input type="text">
-            </p>
-            <p>
-                <label>出发时间:</label> <input type="date">
-            </p>
-            <p>
-                <label>到达时间:</label> <input type="date">
-            </p>
+            </table>
+        </div>
 
+        <div class="table-container">
+            <div class="table-container-header"><span>可添加的机型</span></div>
+            <table class="table-form" border = 0 cellspacing = 0 cellpadding = 0>
+                <tr>
+                    <td><span>机型ID</span></td>
+                    <td><span>机型号</span></td>
+                    <td><span>头等舱总数量</span></td>
+                    <td><span>公务舱总数量</span></td>
+                    <td><span>经济舱总数量</span></td>
+                    <td><span>操作</span></td>
+                </tr>
+                <tr>
+                    <td><span>61</span></td>
+                    <td><span>33-A</span></td>
+                    <td><span>15</span></td>
+                    <td><span>30</span></td>
+                    <td><span>150</span></td>
+                    <td><i class="iconfont">&#xe616;</i></td>
+                </tr>
+                <tr>
+                    <td><span>43</span></td>
+                    <td><span>波音-767-200</span></td>
+                    <td><span>21</span></td>
+                    <td><span>65</span></td>
+                    <td><span>224</span></td>
+                    <td><i class="iconfont">&#xe616;</i></td>
+                </tr>
+                <tr>
+                    <td><span>44</span></td>
+                    <td><span>波音-777-200</span></td>
+                    <td><span>13</span></td>
+                    <td><span>54</span></td>
+                    <td><span>227</span></td>
+                    <td><i class="iconfont">&#xe616;</i></td>
+                </tr>
+
+            </table>
         </div>
     </div>
 </div>

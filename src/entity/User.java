@@ -14,6 +14,13 @@ public class User {
 	private String usertype;
 	private int points;
 	private Timestamp registetime;
+	private int authority;
+	public int getAuthority() {
+		return authority;
+	}
+	public void setAuthority(int authority) {
+		this.authority = authority;
+	}
 	public int getId() {
 		return id;
 	}
@@ -86,6 +93,8 @@ public class User {
 				+ password + ", sex=" + sex + ", realname=" + realname
 				+ ", idcard=" + idcard + ", phone=" + phone + ", email="
 				+ email + ", usertype=" + usertype + ", points=" + points
-				+ ", registetime=" + registetime + "]";
+				+ ", registetime=" + registetime + ", authority=" + authority
+				+ "]";
 	}
+
 }
