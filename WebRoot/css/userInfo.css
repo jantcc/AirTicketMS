@@ -1,0 +1,131 @@
+header {
+    height: 60px;
+    background: url("../img/header_back.jpg") repeat-x;
+}
+.loginBox {
+    height: 60px;
+    float: right;
+    margin-right: 100px;
+}
+.loginBox p, a {
+    color: #2c3786;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+}
+.sub-header {
+    height: 62px;
+    border-top: 2px solid #d6312f;
+    background-color: #2f398e;
+}
+.sub-header-content {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+.nav-list {
+    float: left;
+    width: 150px;
+    height: 62px;
+    line-height: 62px;
+    box-shadow: 2px 0 1px #212b72;
+    cursor: pointer;
+}
+.nav-list:hover {
+    background-color: #cd3333;
+}
+.nav-list > .iconfont {
+    font-size: 30px;
+    float: right;
+    color: #fff;
+    margin-right: 10px;
+}
+.nav-list > span {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    color: #fff;
+}
+.nav-active {
+    background-color: #cd3333;
+}
+
+
+
+.content {
+    height: 506px;
+    padding-top: 36px;
+    background: url("../img/content-back.jpg") repeat-x;
+}
+
+.user-form {
+    width: 980px;
+    height: 410px;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 6px 6px 10px 0 #989898;
+    border: 1px solid #eee;
+}
+
+.form-nav {
+    margin-bottom: 14px;
+}
+.form-nav span {
+    color: #858585;
+}
+.user-form > aside {
+    float: left;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #c8c8c8;
+}
+
+.form-nav-list {
+    width: 168px;
+    height: 50px;
+    line-height: 50px;
+    margin: 8px 4px 0 6px;
+    background: url("../img/button_back.jpg") repeat-x;
+    cursor: pointer;
+}
+.form-nav-list .iconfont {
+    color: #6684f6;
+    font-size: 30px;
+    padding: 0 20px 0 10px;
+    vertical-align: middle;
+}
+.form-nav-list span {
+    color: #002066;
+}
+
+
+
+.form-content {
+    float: left;
+    margin-left: 24px;
+}
+.edit {
+    cursor:  pointer;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    background-color: #cbd6f6;
+}
+.form-content span {
+    color: #2d388a;
+}
+.baseLine {
+    display: inline-block;
+    vertical-align: middle;
+    width: 630px;
+    height: 1px;
+    background-color: #cccccc;
+}
+
+.form-content > table td {
+    height: 26px;
+    padding: 10px 0 0 0;
+}
+.form-content > table td span {
+    color: #2d388a;
+    margin-left: 10px;
+}
