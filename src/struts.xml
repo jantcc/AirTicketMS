@@ -16,17 +16,15 @@
 	
 			<action name="RegistServer" class="RegistServer">
 
-			<result name="Registsuccess">/index.jsp</result>
+			<result name="Registsuccess">/jsp/index.jsp</result>
 
-			<result name="Registerror">/regist.jsp</result>
+			<result name="Registerror">/jsp/regist.jsp</result>
 
 		</action>
 	
 			<action name="User*Server" class="UserActionServer" method="{1}Action">
 
-			<result name="{1}success">/index.jsp</result>
-
-			<result name="{1}error">/regist.jsp</result>
+			<result name="{1}success">/jsp/userInfo.jsp</result>
 
 		</action>
 	</package>

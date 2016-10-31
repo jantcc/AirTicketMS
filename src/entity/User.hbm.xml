@@ -31,18 +31,18 @@
         <property name="email" type="java.lang.String">
             <column name="email" length="50" not-null="true" />
         </property>
-        <property name="usertype" type="java.lang.String">
+        <property name="usertype" type="java.lang.String" insert="false">
             <column name="usertype" length="50">
                 <comment>0普通客户，1银牌客户，2金牌客户</comment>
             </column>
         </property>
-        <property name="points" type="java.lang.Integer">
+        <property name="points" type="java.lang.Integer" insert="false">
             <column name="points" />
         </property>
-        <property name="registetime" type="java.sql.Timestamp">
+        <property name="registetime" type="java.sql.Timestamp" insert="false">
             <column name="registetime" length="19" />
         </property>
-        <property name="authority" type="java.lang.Integer">
+        <property name="authority" type="java.lang.Integer" insert="false">
             <column name="authority">
                 <comment>0普通用户,1管理员,2高级管理员</comment>
             </column>

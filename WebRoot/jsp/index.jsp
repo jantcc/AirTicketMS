@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <html lang="zh-CN">
-
     <head>
+    <base href="<%=basePath%>">
         <meta charset="utf-8">
         <title>登录</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +17,9 @@
         <meta name="author" content="">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/reset.css">
-        <link rel="stylesheet" href="./css/supersized.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/supersized.css">
+        <link rel="stylesheet" href="css/style.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -45,10 +51,10 @@ alert(msg);
         </div>
 		
         <!-- Javascript -->
-        <script src="./js/jquery-1.8.2.min.js"></script>
-        <script src="./js/supersized.3.2.7.min.js"></script>
-        <script src="./js/supersized-init.js"></script>
-        <script src="./js/scripts.js"></script>
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="js/supersized.3.2.7.min.js"></script>
+        <script src="js/supersized-init.js"></script>
+        <script src="js/scripts.js"></script>
 
     </body>
 
