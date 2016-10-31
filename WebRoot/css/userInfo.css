@@ -129,3 +129,15 @@ header {
     color: #2d388a;
     margin-left: 10px;
 }
+
+
+.form-content > table td input {
+    margin-left: 10px;
+}
+
+.render-form {
+    display: block;
+}
+.edit-form {
+    display: none;
+}
