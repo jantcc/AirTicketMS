@@ -8,7 +8,7 @@
 		<!-- 此处的class的内容要与Spring配置文件中的bean的id相同 -->
 		<action name="LoginServer" class="LoginServer">
 
-			<result name="Loginsuccess">/jsp/result.jsp</result>
+			<result type="redirect" name="Loginsuccess">/jsp/userInfo.jsp</result>
 
 			<result name="Loginerror">/jsp/index.jsp</result>
 

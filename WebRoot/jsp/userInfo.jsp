@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="loginBox">
-            <p>欢迎您,Max</p>
+            <p>欢迎您,<s:property value="#session.user.username"/></p>
             <a href="#">进入后台</a>
         </div>
     </header>
@@ -64,31 +64,34 @@
                 <table style="width: 660px; margin: 0 auto; text-align: center; margin-bottom: 20px">
                     <tr>
                         <td>
-                            <label>用户名:</label><span>Max</span>
+                            <label>用户名:</label><span><s:property value="#session.user.username"/></span>
                         </td>
                         <td>
-                            <label>积分:</label><span>32000</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>性别:</label><span>男</span>
-                        </td>
-                        <td>
-                            <label>注册时间:</label><span>2014-12-01 13:28:01</span>
+                            <label>积分:</label><span><s:property value="#session.user.points"/></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>真实姓名:</label><span>继湘明</span>
+                            <label>性别:</label><span><s:property value="#session.user.sex"/></span>
                         </td>
                         <td>
-                            <label>账户类型:</label><span>普通用户</span>
+                            <label>注册时间:</label><span><s:property value="#session.user.registetime"/></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>身份证号:</label><span>440883199203211455</span>
+                            <label>真实姓名:</label><span><s:property value="#session.user.realname"/></span>
+                        </td>
+                        <td>
+                            <label>账户类型:</label><span><s:if test="#session.user.usertype=='0'">普通客户</s:if>
+                            <s:elseif test="#session.user.usertype=='1'">银牌客户</s:elseif>
+                            <s:else>金牌客户</s:else>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>身份证号:</label><span><s:property value="#session.user.idcard"/></span>
                         </td>
                     </tr>
                 </table>
@@ -100,10 +103,10 @@
                 <table style="width: 660px; margin: 0 auto; text-align: center">
                     <tr>
                         <td>
-                            <label>手机号码:</label><span>13692333814</span>
+                            <label>手机号码:</label><span><s:property value="#session.user.phone"/></span>
                         </td>
                         <td>
-                            <label>邮件地址:</label><span>max@gmail.com</span>
+                            <label>邮件地址:</label><span><s:property value="#session.user.email"/></span>
                         </td>
                     </tr>
                 </table>

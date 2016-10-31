@@ -50,7 +50,7 @@ public class LoginAction extends ActionSupport {
 			return "Loginerror";
 		}
 		if (password.equals(user.getPassword())) {
-			//登陆成功 跳转
+			ActionContext.getContext().getSession().put("user",user);  
 			return "Loginsuccess";
 
 		} else {
