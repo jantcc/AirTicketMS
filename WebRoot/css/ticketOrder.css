@@ -1,0 +1,253 @@
+header {
+    height: 60px;
+    background: url("../img/header_back.jpg") repeat-x;
+}
+.loginBox {
+    height: 60px;
+    float: right;
+    margin-right: 100px;
+}
+.loginBox p, a {
+    color: #2c3786;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+}
+.sub-header {
+    height: 62px;
+    border-top: 2px solid #d6312f;
+    background-color: #2f398e;
+}
+.sub-header-content {
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+.nav-list {
+    float: left;
+    width: 150px;
+    height: 62px;
+    line-height: 62px;
+    box-shadow: 2px 0 1px #212b72;
+    cursor: pointer;
+}
+.nav-list:hover {
+    background-color: #cd3333;
+}
+.nav-list > .iconfont {
+    font-size: 30px;
+    float: right;
+    color: #fff;
+    margin-right: 10px;
+}
+.nav-list > span {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    color: #fff;
+}
+.nav-active {
+    background-color: #cd3333;
+}
+
+
+
+.content {
+    padding-top: 36px;
+    background: url("../img/content-back.jpg") repeat;
+}
+
+.user-form {
+    width: 980px;
+    padding: 20px 20px 20px 20px;
+    margin: 0 auto;
+    box-shadow: 6px 6px 10px 0 #989898;
+    border: 1px solid #eee;
+    background-color: #f7f7f7;
+    zoom: 1;
+}
+.user-form:after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.form-nav {
+    margin-bottom: 14px;
+}
+.form-nav span {
+    color: #858585;
+}
+.user-form > aside {
+    float: left;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #c8c8c8;
+    background-color: #fdfdfd;
+}
+
+.form-nav-list {
+    width: 168px;
+    height: 50px;
+    line-height: 50px;
+    margin: 8px 4px 0 6px;
+    background: url("../img/button_back.jpg") repeat-x;
+    cursor: pointer;
+}
+.form-nav-list .iconfont {
+    color: #6684f6;
+    font-size: 30px;
+    padding: 0 20px 0 10px;
+    vertical-align: middle;
+}
+.form-nav-list span {
+    color: #002066;
+}
+
+.search-Container {
+    float: left;
+    width: 790px;
+    height: 180px;
+    border: 1px solid #c8c8c8;
+    background-color: #fdfdfd;
+}
+
+.search-Container > p {
+    padding: 30px 0 20px 20px;
+}
+.searchBox {
+    width: 560px;
+    height: 40px;
+    border: 2px solid #cc3433;
+    margin-left: 20px;
+    background-color: #cc3433;
+}
+.order-num {
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-right: 1px solid #969897;
+    background-color: #fff;
+}
+.order-num span {
+    font-size: 20px;
+}
+.searchBox input {
+    float: left;
+    width: 360px;
+    height: 38px;
+    border: none;
+}
+.searchBtn {
+    float: left;
+    width: 97px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.searchBtn span, .iconfont{
+    color: #fff;
+}
+.searchBtn:hover {
+    background-color: #f908ac;
+}
+
+.order-Date {
+    width: 330px;
+    height: 40px;
+    margin-top: 16px;
+    margin-left: 20px;
+}
+.order-Date > input {
+    width: 200px;
+    height: 34px;
+    margin-left: 10px;
+}
+
+.orders {
+    float: left;
+    width: 810px;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+
+.orders-header {
+    position: relative;
+    width: 810px;
+    height: 60px;
+    background-color: #262f72;
+}
+.triangle-left {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #949494;
+    border-left: 10px solid transparent;
+}
+.triangle-right {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #949494;
+    border-right: 10px solid transparent;
+}
+.orders-header table {
+    width: 790px;
+    margin-left: 10px;
+}
+.orders-header > table td {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.orders-header td > span {
+    color: #fff;
+}
+.orders-table {
+    width: 790px;
+    margin-left: 10px;
+}
+.orders-table td {
+    font-size: 16px;
+    height: 120px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+.orders-table tr td:nth-of-type(1){
+    padding: 10px 0 0 10px;
+}
+.orders-table tr td:nth-of-type(2){
+    padding: 10px 0 0 10px;
+}
+.orders-table tr td:nth-of-type(1) > p:last-child{
+    margin-top: 20px;
+}
+.orders-table tr td:nth-of-type(2) > p:last-child{
+    margin-top: 20px;
+}
+
+
+
+.orders-table tr td:nth-of-type(3) {
+    padding: 0 18px 0 18px;
+}
+.orders-table tr td:nth-of-type(4) {
+    padding: 0 18px 0 18px;
+    color: red;
+}
+.orders-table tr td:nth-of-type(5) {
+    padding: 0 18px 0 18px;
+}
+.orders-table tr td:nth-of-type(6) {
+    padding: 0 18px 0 18px;
+}
+
