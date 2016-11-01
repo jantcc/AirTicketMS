@@ -31,6 +31,16 @@ public class UserServiceImpl implements UserService {
 		this.userDao.UpdateUser(user);
 	}
 
+	public int UpdateUserPassword(User user,String newpassword) {
+		// TODO Auto-generated method stub
+		String password = user.getPassword();
+		User puser = userDao.FindUser(user.getUsername());
+		if(!password.equals(puser.getPassword())){
+			return 0;
+		}
+		return this.userDao.UpdateUserPassword(user,newpassword);
+	}
+
 
 
 }

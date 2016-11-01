@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../css/userInfo.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../css/reset.css">
+        <script type="text/javascript"> 
+var msg="${actionMessages[0]}";
+if(msg!=""){
+alert(msg);
+}
+</script>
 </head>
 <body>
 <header>
@@ -18,10 +24,10 @@
 <div class="sub-header">
     <nav class="sub-header-content">
         <ul>
-            <li class="nav-list">
+            <li class="nav-list" onclick="window.location.href='userInfo.jsp'">
                 <i class="iconfont">&#xe60b;</i>
             </li>
-            <li class="nav-list nav-active">
+            <li class="nav-list nav-active" onclick="window.location.href='userInfo.jsp'">
                 <span>我的信息</span>
                 <i class="iconfont">&#xe627;</i>
             </li>
@@ -42,7 +48,7 @@
         </nav>
         <aside>
             <ul>
-                <li class="form-nav-list">
+                <li class="form-nav-list"  onclick="window.location.href='userInfo.jsp'">
                     <i class="iconfont">&#xe60a;</i>
                     <span>个人信息</span>
                 </li>
@@ -50,7 +56,7 @@
                     <i class="iconfont">&#xe600;</i>
                     <span>机票订单</span>
                 </li>
-                <li class="form-nav-list">
+                <li class="form-nav-list" onclick="window.location.href='updatePassword.jsp'">
                     <i class="iconfont">&#xe73f;</i>
                     <span>更改密码</span>
                 </li>

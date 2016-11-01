@@ -26,6 +26,7 @@
 
 			<result name="{1}success">/jsp/userInfo.jsp</result>
 
+			<result name="updatepassworderror">/jsp/updatePassword.jsp</result>
 		</action>
 	</package>
 </struts>

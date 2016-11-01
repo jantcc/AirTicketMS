@@ -55,6 +55,20 @@ public class UserDaoImpl implements UserDao {
 		ts.commit();
 		hu.closeSession(session);
 	}
+	public int UpdateUserPassword(User user,String newpassword) {
+		// TODO Auto-generated method stub
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		Transaction ts = session.beginTransaction();
+		String hql="update User as u set u.password=? where u.id=?";
+		Query query = session.createQuery(hql);
+		query.setString(0, newpassword);
+		query.setInteger(1, user.getId());
+		query.executeUpdate();
+		ts.commit();
+		hu.closeSession(session);
+		return 1;
+	}
 
 
 
