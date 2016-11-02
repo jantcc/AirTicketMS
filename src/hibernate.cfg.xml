@@ -23,6 +23,8 @@
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">true</property>
 		<mapping resource="entity/User.hbm.xml" />
+		<mapping resource="entity/Company.hbm.xml" />
+		<mapping resource="entity/Discount.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

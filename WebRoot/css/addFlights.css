@@ -37,7 +37,7 @@
 
 .addFlights-form {
     width: 736px;
-    height: 400px;
+    height: 400px auto;
     border: 1px solid #0866c6;
     margin-top: 40px;
     margin-left: calc(50% - 368px);

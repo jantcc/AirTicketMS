@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
-<header></header>
+    <header>
+                <div align="center">
+           <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
+            </div>
+    </header>
 <div class="container">
     <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
@@ -106,15 +110,45 @@
                 <label>到达机场:</label> <input type="text">
             </p>
             <p>
-                <label>出发时间:</label> <input type="date">
+                <label>出发时间:</label> <input type="text" 
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+  class="Wdate" >
             </p>
             <p>
-                <label>到达时间:</label> <input type="date">
+                <label>到达时间:</label> <input type="text" 
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+  class="Wdate" >
             </p>
-
+            	<p>
+                <label>头等舱价格:</label> <input type="text"  name=""
+												 />
+			</p>
+            	<p>
+				<label>公务舱价格:</label> <input type="text"  name=""
+												 />
+		    </p>
+				<p>
+				<label>经济舱价格:</label> <input type="text"  name=""
+												 />
+			</p>
+				<p>
+				<label>机型:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<select name="planeModelCode" style="width:290px">
+					<s:iterator value="#session.allPlaneModel">
+							<option value="<s:property value="planeModelCode"/>"><s:property
+										value="planeModelCode" />
+								</option>
+					  </s:iterator>
+								</select>
+			</p>
+				<p align="center" style="margin-top: 5px;">
+					<input name="companyName" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
+					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;">
+				</p>
         </div>
     </div>
 </div>
 <script src="../js/dashboard.js"></script>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script> 
 </body>
 </html>

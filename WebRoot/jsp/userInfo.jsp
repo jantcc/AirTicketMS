@@ -18,7 +18,7 @@ alert(msg);
 <header>
     <div class="loginBox">
         <p>欢迎您,<s:property value="#session.user.username"/></p>
-        <a href="#">进入后台</a>
+        <a href="bgindex.jsp">进入后台</a>
     </div>
 </header>
 <div class="sub-header">

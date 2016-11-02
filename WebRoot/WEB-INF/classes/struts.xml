@@ -28,5 +28,12 @@
 
 			<result name="updatepassworderror">/jsp/updatePassword.jsp</result>
 		</action>
+		
+			<action name="addCompanyServer" class="CompanyAction" method="addCompany">
+
+			<result type="redirect" name="addsuccess">/jsp/bgindex.jsp</result>
+
+
+		</action>
 	</package>
 </struts>
