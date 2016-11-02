@@ -142,7 +142,7 @@
 								</select>
 			</p>
 				<p align="center" style="margin-top: 5px;">
-					<input name="companyName" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
+					<input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
 					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;">
 				</p>
         </div>
