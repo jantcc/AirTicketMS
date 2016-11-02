@@ -19,5 +19,3 @@ btn.addEventListener('click', function () {
     $('.background').animate({marginTop: "-" + height + "px"}, 700);
 }, false);
 
-
-//更新容器高度,填满浏览器

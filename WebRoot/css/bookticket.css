@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id："170441" */
+    src: url('//at.alicdn.com/t/font_1ee2ypfr1dnm6lxr.eot');
+    src: url('//at.alicdn.com/t/font_1ee2ypfr1dnm6lxr.eot') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1ee2ypfr1dnm6lxr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1ee2ypfr1dnm6lxr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1ee2ypfr1dnm6lxr.svg#iconfont') format('svg');
+}
+header{
+    height:60px;
+}
+.login {
+    height:55px;
+    float: right;
+    background-repeat: repeat-x;
+    margin-right: 100px;
+}
+.downlogin{
+    height:68px;
+    border-top:4px solid #cd3333;
+    background-color:#2d3685;
+}
+.navigation{
+    height:64px;
+    margin:0 auto;
+}
+.info{
+    width:150px;
+    height:68px;
+    float:left;
+    color: #ffffff;
+    margin-left:116px;
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+}
+.info:hover{
+    background-color: #cd3333;
+}
+.iconfont{
+    font-family: iconfont, serif;
+    font-size:30px;
+    font-style:normal;
+    color: #ffffff;
+}
+.reserve{
+    width:150px;
+    height:68px;
+    float:left;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+    background-color:#cd3333;
+}
+.iconfontwo{
+    font-family: iconfont, serif;
+    font-size:30px;
+    font-style:normal;
+    color: #ffffff;
+}
+.white{
+    background-color: #ffffff;
+    height: 363px;
+    margin-top: 34px;
+}
+.buttom{
+    background-color:#2d3685;
+    width: 162px;
+    height: 37px;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.buttomleft{
+    height:5px;
+    background-color:#2d3685;
+}
+.infoicon{
+    margin-top: 15px;
+}
+.reserveicon{
+    margin-top: 15px;
+}
+.book{
+    margin-left:60px;
+    padding-top:10px;
+}
+.startplace{
+    width:180px ;
+    height:76px;
+    float: left;
+    color:#565656;
+    position:relative;
+}
+.endplace{
+    float: right;
+    color:#565656;
+    position: relative;
+}
+.search{
+    width:164px;
+    height:31px;
+}
+.citychoose{
+    margin-top:25px;
+}
+.positiontwo{
+    font-family: iconfont, serif;
+    font-size:30px;
+    font-style:normal;
+    color: #2357a3;
+    float: right;
+    position: absolute;
+    top:15px;
+    right:-5px;
+}
+.position{
+    font-family: iconfont, serif;
+    font-size:30px;
+    font-style:normal;
+    color: #2357a3;
+    float: right;
+    position: absolute;
+    top:15px;
+    right:7px;
+}
+.subbutton{
+    width:242px;
+    height:53px;
+    background-color: #262f72;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight:bold;
+    margin-top: 100px;
+}
+.date_picker{
+    margin-top:10px;
+    width:164px;
+    height:31px;
+}
+.box{
+    width:600px;
+    margin:0 auto;
+}

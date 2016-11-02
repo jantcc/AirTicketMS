@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>booktickt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kuCity.css">
+</head>
+<body background="img/header_back.jpg">
+<header>
+    <div class="login">
+        <p>欢迎您，IshImy</p>
+    </div>
+</header>
+<div class="downlogin">
+<nav class="navigation">
+    <ul>
+        <li class="info">
+        <p class="infoicon">我的信息
+        <i class="iconfont">&#xe719;</i>
+            </p>
+        </li>
+        <li class="reserve">
+        <p class="reserveicon">行程预订
+        <i class="iconfontwo">&#xe607;</i>
+            </p>
+        </li>
+    </ul>
+</nav>
+</div>
+<div class="white">
+<div class="buttom">
+<p class="book">机票预订</p>
+</div>
+    <div class="buttomleft"></div>
+    <div class="box">
+    <div class="citychoose">
+    <div class="startplace">
+        <p>出发地</p>
+        <input type="text" class="search">
+        <i class="position">&#xe652;</i>
+        <input type="date" id="datePicker" class="date_picker" placeholder="点击选择日期"/>
+    </div>
+    <div class="endplace">
+        <p>目的地</p>
+        <input type="text" class="search">
+        <i class="positiontwo">&#xe652;</i>
+    </div>
+    </div>
+
+
+
+    <input class="subbutton" type="submit" value="立刻查询" onclick="">
+    </div>
+</div>
+
+<script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="kuCity.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.search').kuCity();
+        $('.searchend').kuCity();
+    });
+    </script>
+
+</body>
+</html>
