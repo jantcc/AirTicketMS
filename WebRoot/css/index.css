@@ -1,0 +1,182 @@
+.container {
+    overflow: hidden;
+    height: 738px;
+}
+.background {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 738px;
+    min-width: 1000px;
+    background: url("../img/index_background.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+.title {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 100px;
+}
+.background h2 {
+    font-size: 60px;
+    color: #fff;
+}
+.background > img {
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 112px;
+    top: 40%;
+    left: calc(50% - 150px);
+    -webkit-animation: fly linear;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation: fly linear;
+    -o-animation-duration: 4s;
+    -o-animation-fill-mode: forwards;
+    -moz-animation: fly linear;
+    -moz-animation-duration: 4s;
+    -moz-animation-fill-mode: forwards;
+    animation: fly linear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+.loginPage {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 50px);
+    cursor: pointer;
+}
+.loginPage li >.iconfont {
+    font-size: 30px;
+    color: #fff;
+    -webkit-animation: changeColor 0.9s infinite alternate;
+    -moz-animation: changeColor 0.9s infinite alternate;
+    -o-animation: changeColor 0.9s infinite alternate;
+    animation: changeColor 0.9s infinite alternate;
+}
+.loginPage > ul > li:nth-of-type(2) > .iconfont{
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+
+}
+.loginPage > ul > li:nth-of-type(3) > .iconfont{
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+
+@-webkit-keyframes fly {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        top: 60%;
+        transform: scale(2);
+    }
+    80% {
+        top: 20%;
+    }
+    100% {
+        top: -100%;
+        transform: scale(8);
+    }
+}
+
+@-webkit-keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #13f2ef;
+    }
+}
+
+
+@-moz-keyframes fly {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        top: 60%;
+        transform: scale(2);
+    }
+    80% {
+        top: 20%;
+    }
+    100% {
+        top: -100%;
+        transform: scale(8);
+    }
+}
+
+@-moz-keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #13f2ef;
+    }
+}
+
+@-o-keyframes fly {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        top: 60%;
+        transform: scale(2);
+    }
+    80% {
+        top: 20%;
+    }
+    100% {
+        top: -100%;
+        transform: scale(8);
+    }
+}
+
+@-o-keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #13f2ef;
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        top: 60%;
+        transform: scale(2);
+    }
+    80% {
+        top: 20%;
+    }
+    100% {
+        top: -100%;
+        transform: scale(8);
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+    100% {
+        color: #13f2ef;
+    }
+}
