@@ -71,14 +71,14 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>增加航班信息</span>
+            <span>添加航班</span>
         </div>
         <div class="content-title">
             <div class="flag">
                 <i class="iconfont">&#xe604;</i>
             </div>
-            <div class="title">
-                <h2>添加航班</h2>
+            <div class="title" style="width: 200px;">
+                <h2>请选择航空公司</h2>
             </div>
             <div class="selectBox">
                 <select name="companyName" id="addFlights">
@@ -88,12 +88,11 @@
                 </select>
                 <i class="iconfont">&#xe615;</i>
             </div>
-            <input type="submit" class="addFlights-submit" value="提交">
         </div>
 
 
         <div class="addFlights-form">
-            <div class="form-header"><span>添加航空公司</span></div>
+            <div class="form-header"><span>添加航班</span></div>
             <p>
                 <label>航班号:</label> <input type="text">
             </p>
@@ -143,7 +142,7 @@
 			</p>
 				<p align="center" style="margin-top: 5px;">
 					<input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
-					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;">
+					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;" value="添加">
 				</p>
         </div>
     </div>
