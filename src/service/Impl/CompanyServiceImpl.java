@@ -1,5 +1,7 @@
 package service.Impl;
 
+import java.util.List;
+
 import dao.CompanyDao;
 import entity.Company;
 import service.CompanyService;
@@ -23,6 +25,16 @@ public class CompanyServiceImpl implements CompanyService {
 	public Company find(String companycode) {
 		// TODO Auto-generated method stub
 		return this.companyDao.find(companycode);
+	}
+
+	public List<Company> findAll() {
+		// TODO Auto-generated method stub
+		return this.companyDao.findAll();
+	}
+
+	public Company find(int id) {
+		// TODO Auto-generated method stub
+		return this.companyDao.find(id);
 	}
 
 }

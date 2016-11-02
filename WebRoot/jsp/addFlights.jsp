@@ -15,10 +15,10 @@
             </div>
     </header>
 <div class="container">
-    <aside>
+           <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
         <ul class="nav-bar-container">
-            <a href="#" class="nav-a">
+            <a href="bgindex.jsp" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe603;</i><span class="list-title">首页</span></li>
             </a>
             <a href="#user-info" class="nav-a">
@@ -47,8 +47,9 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airCompany-manage">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li>
+                <a href="addCompany.jsp" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li></a>
+                <a href="showCompany" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li></a>
+                <a href="showCompany?locationurl=companyhaveplane" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司已有机型</span></li></a>           		
             </ul>
             <a href="#plantType-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i
@@ -56,8 +57,8 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="plantType-manage">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加机型</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li>
+               <a href="showCompanyName"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加机型</span></li></a>
+               <a href="showAllPlaneModel"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li></a>
             </ul>
             <a href="#" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i

@@ -6,6 +6,7 @@
     <title>addFlights</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/addPlantType.css">
+    <link rel="stylesheet" href="../css/addFlights.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
@@ -15,10 +16,10 @@
             </div>
     </header>
 <div class="container">
-    <aside>
+         <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
         <ul class="nav-bar-container">
-            <a href="#" class="nav-a">
+            <a href="bgindex.jsp" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe603;</i><span class="list-title">首页</span></li>
             </a>
             <a href="#user-info" class="nav-a">
@@ -47,8 +48,9 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airCompany-manage">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li>
+                <a href="addCompany.jsp" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li></a>
+                <a href="showCompany" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li></a>
+                <a href="showCompany?locationurl=companyhaveplane" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司已有机型</span></li></a>           		
             </ul>
             <a href="#plantType-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i
@@ -56,8 +58,8 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="plantType-manage">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加机型</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li>
+               <a href="showCompanyName"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加机型</span></li></a>
+               <a href="showAllPlaneModel"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li></a>
             </ul>
             <a href="#" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i
@@ -79,39 +81,45 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>增加航班信息</span>
+            <span>添加机型</span>
         </div>
-        <div class="content-title">
+         <form action="addPlaneModel" method="post">    
+         <div class="content-title">
             <div class="flag">
                 <i class="iconfont">&#xe604;</i>
             </div>
-            <div class="title">
-                <h2>添加机型</h2>
+            <div class="title" style="width: 200px;">
+                <h2>请选择航空公司</h2>
             </div>
-
+            <div class="selectBox">
+                <select name="company.id" id="addFlights">            
+                    <s:iterator value="#session.list" id="company">
+                    	<option value="<s:property value="#company.id"/>"><s:property value="#company.companyname"/></option>
+                    </s:iterator>
+                </select>
+                <i class="iconfont">&#xe615;</i>
+            </div>
         </div>
-
-
         <div class="addType-form">
             <div class="form-header"><span>添加机型</span></div>
             <p>
-                <label>机型名:</label> <input type="text">
+                <label>机型号:</label> <input type="text" name="planemodel.planemodelcode">
             </p>
             <p>
-                <label>头等舱容纳总数:</label> <input type="text">
+                <label>头等舱容纳总数:</label> <input type="text" name="planemodel.firstclassnumber">
             </p>
             <p>
-                <label>公务舱容纳总数:</label> <input type="text">
+                <label>公务舱容纳总数:</label> <input type="text" name="planemodel.businessclassnumber">
             </p>
             <p>
-                <label>经济舱容纳总数:</label> <input type="text">
+                <label>经济舱容纳总数:</label> <input type="text" name="planemodel.economyclassnumber">
             </p>
 
             <div class="submitBox">
                 <input type="submit" value="提交">
             </div>
         </div>
-
+	</form>
     </div>
 </div>
 <script src="../js/dashboard.js"></script>

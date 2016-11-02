@@ -97,6 +97,9 @@ a {
 #plantType-manage:target {
     display: block;
 }
+#airFlights-manage:target {
+    display: block;
+}
 
 .nav-child-list > .nav-list {
     background-color: #fff;

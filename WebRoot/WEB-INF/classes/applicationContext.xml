@@ -44,6 +44,9 @@
 	<bean id="discountDao" class="dao.Impl.DiscountDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="planemodelDao" class="dao.Impl.PlanemodelDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	<!-- Service配置 -->
 	<bean id="userService" class="service.Impl.UserServiceImpl">
 	 <property name="userDao" ref="userDao"></property>
@@ -54,7 +57,9 @@
 	<bean id="discountService" class="service.Impl.DiscountServiceImpl">
 	 <property name="discountDao" ref="discountDao"></property>
 	</bean>
-	
+	<bean id="planemodelService" class="service.Impl.PlanemodelServiceImpl">
+	 <property name="planemodelDao" ref="planemodelDao"></property>
+	</bean>
 	
 	<bean id="LoginServer" class="action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
@@ -68,6 +73,7 @@
 	<bean id="CompanyAction" class="action.CompanyAction" scope="prototype">
 			<property name="companyService" ref="companyService"></property>
 			<property name="discountService" ref="discountService"></property>
+			<property name="planemodelService" ref="planemodelService"></property>
 	</bean>
 	
 </beans>

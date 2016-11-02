@@ -33,6 +33,31 @@
 
 			<result type="redirect" name="addsuccess">/jsp/bgindex.jsp</result>
 
+		</action>
+			<action name="showCompany" class="CompanyAction" method="showCompany">
+
+			<result type="redirect" name="success">/jsp/airCompanyInfo.jsp</result>
+		
+			<result type="redirect" name="successtocompanyhaveplane">/jsp/companyhaveplane.jsp</result>
+		</action>
+			<action name="showCompanyName" class="CompanyAction" method="showCompanyName">
+
+			<result type="redirect" name="success">/jsp/addPlantModel.jsp</result>
+
+		</action>
+		<action name="addPlaneModel" class="CompanyAction" method="addPlaneModel">
+
+			<result type="redirect" name="success">/jsp/bgindex.jsp</result>
+
+		</action>
+			<action name="showAllPlaneModel" class="CompanyAction" method="showAllPlaneModel">
+
+			<result type="redirect" name="success">/jsp/allPlantModel.jsp</result>
+
+		</action>
+		<action name="showCompanyHaveandHaventModel" class="CompanyAction" method="showCompanyHaveandHaventModel">
+
+			<result type="redirect" name="success">/jsp/companyhaveplane.jsp</result>
 
 		</action>
 	</package>
