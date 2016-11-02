@@ -91,7 +91,9 @@ a {
 #user-info:target {
     display: block;
 }
-
+#airCompany-manage:target {
+    display: block;
+}
 .nav-child-list > .nav-list {
     background-color: #fff;
     border-bottom: 1px solid #dcdcdc;
