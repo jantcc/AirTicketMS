@@ -6,5 +6,5 @@ var password2 = document.getElementById("confirmpassword").value;
   }else{
 	  document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
   }
-
+ 
 }

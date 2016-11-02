@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
-<header></header>
+    <header>
+                <div align="center">
+           <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
+            </div>
+    </header>
 <div class="container">
     <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>

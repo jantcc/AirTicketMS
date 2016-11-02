@@ -13,6 +13,8 @@ container.style.height = height + "px";
 background.style.height = height + "px";
 pageContainer.style.height = height + "px";
 
+console.log(height);
+
 btn.addEventListener('click', function () {
     $('.background').animate({marginTop: "-" + height + "px"}, 700);
 }, false);

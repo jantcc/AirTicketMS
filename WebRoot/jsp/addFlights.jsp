@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
-<header></header>
+    <header>
+                <div align="center">
+           <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
+            </div>
+    </header>
 <div class="container">
     <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
@@ -67,14 +71,14 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>增加航班信息</span>
+            <span>添加航班</span>
         </div>
         <div class="content-title">
             <div class="flag">
                 <i class="iconfont">&#xe604;</i>
             </div>
-            <div class="title">
-                <h2>添加航班</h2>
+            <div class="title" style="width: 200px;">
+                <h2>请选择航空公司</h2>
             </div>
             <div class="selectBox">
                 <select name="companyName" id="addFlights">
@@ -84,12 +88,11 @@
                 </select>
                 <i class="iconfont">&#xe615;</i>
             </div>
-            <input type="submit" class="addFlights-submit" value="提交">
         </div>
 
 
         <div class="addFlights-form">
-            <div class="form-header"><span>添加航空公司</span></div>
+            <div class="form-header"><span>添加航班</span></div>
             <p>
                 <label>航班号:</label> <input type="text">
             </p>
@@ -106,15 +109,45 @@
                 <label>到达机场:</label> <input type="text">
             </p>
             <p>
-                <label>出发时间:</label> <input type="date">
+                <label>出发时间:</label> <input type="text" 
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+  class="Wdate" >
             </p>
             <p>
-                <label>到达时间:</label> <input type="date">
+                <label>到达时间:</label> <input type="text" 
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+  class="Wdate" >
             </p>
-
+            	<p>
+                <label>头等舱价格:</label> <input type="text"  name=""
+												 />
+			</p>
+            	<p>
+				<label>公务舱价格:</label> <input type="text"  name=""
+												 />
+		    </p>
+				<p>
+				<label>经济舱价格:</label> <input type="text"  name=""
+												 />
+			</p>
+				<p>
+				<label>机型:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<select name="planeModelCode" style="width:290px">
+					<s:iterator value="#session.allPlaneModel">
+							<option value="<s:property value="planeModelCode"/>"><s:property
+										value="planeModelCode" />
+								</option>
+					  </s:iterator>
+								</select>
+			</p>
+				<p align="center" style="margin-top: 5px;">
+					<input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
+					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;" value="添加">
+				</p>
         </div>
     </div>
 </div>
 <script src="../js/dashboard.js"></script>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script> 
 </body>
 </html>
