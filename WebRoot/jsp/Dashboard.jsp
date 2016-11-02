@@ -18,26 +18,57 @@
         <aside>
             <div class="navbar-header"><span>NAVIGATION</span></div>
             <ul class="nav-bar-container">
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe603;</i><span class="list-title">首页</span></li></a>
-                <a href="#user-info" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe605;</i><span class="list-title">订票管理系统</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
+                <a href="#" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe603;</i><span class="list-title">首页</span></li>
+                </a>
+                <a href="#user-info" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe605;</i><span class="list-title">订票管理系统</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
                 <ul class="nav-child-list" id="user-info">
                     <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加客户信息</span></li>
                     <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询客户信息</span></li>
                 </ul>
 
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe601;</i><span class="list-title">航班机票管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe605;</i><span class="list-title">航空公司管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
-                <a href="#" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
-                <a href="#user-manage" class="nav-a"><li class="nav-list"><i class="iconfont">&#xe60a;</i><span class="list-title">人员用户管理</span><i class="iconfont float-right">&#xe608;
-                </i></li></a>
+                <a href="#" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe601;</i><span class="list-title">航班机票管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
+                <a href="#" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
+                <a href="#airCompany-manage" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe605;</i><span class="list-title">航空公司管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
+                <ul class="nav-child-list" id="airCompany-manage">
+                    <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li>
+                    <li class="nav-list"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li>
+                </ul>
+                <a href="#plantType-manage" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
+                <ul class="nav-child-list" id="plantType-manage">
+                    <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加机型</span></li>
+                    <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li>
+                </ul>
+                <a href="#" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
+                <a href="#user-manage" class="nav-a">
+                    <li class="nav-list"><i class="iconfont">&#xe60a;</i><span class="list-title">人员用户管理</span><i
+                            class="iconfont float-right">&#xe608;
+                    </i></li>
+                </a>
                 <ul class="nav-child-list" id="user-manage">
                     <li class="nav-list"><i class="iconfont">&#xe609;</i><span>增加普通管理员</span></li>
                     <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询普通管理员</span></li>
