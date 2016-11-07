@@ -81,7 +81,7 @@ alert(msg);
                         <label>性别:</label><span><s:property value="#session.user.sex"/></span>
                     </td>
                     <td>
-                        <label>注册时间:</label><span><s:property value="#session.user.registetime"/></span>
+                        <label>注册时间:</label><span><s:property value="#session.user.registetime.toString().substring(0,19)"/></span>
                     </td>
                 </tr>
                 <tr>

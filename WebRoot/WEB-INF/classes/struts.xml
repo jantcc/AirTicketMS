@@ -80,6 +80,8 @@
 			<result type="redirect" name="successtoflights">/jsp/flights.jsp</result>
 			
 			<result name="error1">/jsp/bookticket.jsp</result>	
+			
+			<result name="error2">/jsp/flights.jsp</result>
 		</action>
 	</package>
 </struts>

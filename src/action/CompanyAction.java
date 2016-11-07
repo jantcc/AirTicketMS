@@ -172,6 +172,8 @@ public class CompanyAction extends ActionSupport {
 		ActionContext.getContext().getSession().put("flightlist",list); 
 		if(list.size()==0 && "flights".equals(locationurl)){
 			addActionMessage("未找到该行程的航班记录,请重新输入！"); 
+			String flag = ServletActionContext.getRequest().getParameter("flag");
+			if("g".equals(flag)) return "error2";
 			return "error1";
 		}
 		if("flights".equals(locationurl)){

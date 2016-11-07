@@ -45,24 +45,30 @@
         </nav>
 
         <aside style="margin-left: 360px">
+        	<form action="showFlightscustom?locationurl=flights&flag=g" method="post">
             <ul>
                 <li class="form-nav-list">
                     <span>起始地:</span>
-                    <input id="deptCd" name="startPoint" type="text" class="city"
+                    <input id="deptCd" name="flights.startpoint" type="text" class="city"
                            value='<s:property value="#session.flightlist[0].startpoint"/>'>
                 </li>
                 <li class="form-nav-list">
                     <span>目的地:</span>
-                    <input id="arrDd" name="endPoint" type="text" class="input city"
+                    <input id="arrDd" name="flights.endpoint" type="text" class="input city"
                            value='<s:property value="#session.flightlist[0].endpoint"/>'>
                 </li>
                 <li class="form-nav-list">
                     <span>时间:</span>
-                    <input type="text" value='<s:property value="#session.flightlist[0].starttime.toString().substring(0,10)"/>'  class="input date">
+                    <input type="text" name="flights.starttime"
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'})"
+  value='<s:property value="#session.flightlist[0].starttime.toString().substring(0,10)"/>'
+  class="Wdate" />
+                    
                 </li>
-                <input type="button" name="search" value="搜 索" id="btn_flight_search">
+                <input type="submit" name="search" value="搜 索" id="btn_flight_search">
 
             </ul>
+            </form>
         </aside>
         <div class="orders">
             <div class="orders-header">
@@ -113,5 +119,12 @@
     </div>
 </div>
 <script src="../js/checkpassword.js"></script>
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+var msg="${actionMessages[0]}";
+if(msg!=""){
+alert(msg);
+}
+</script>
 </body>
 </html>
