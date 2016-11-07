@@ -41,7 +41,7 @@ alert(msg);
 </div>
 
 <div class="content">
-    <div class="user-form">
+    <div class="user-form clearFlex">
         <nav class="form-nav">
             <span>您的位置:首页 ></span>
             <span>我的东航</span>

@@ -1,0 +1,15 @@
+.form-nav {
+    padding: 0 0 0 30px;
+}
+.order-container {
+    width: 95%;
+    min-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+}
+.order-info {
+    width: 950px;
+    height: 116px;
+    border: 2px solid #cacaca;
+}
