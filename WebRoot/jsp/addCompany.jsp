@@ -36,11 +36,25 @@
                         class="iconfont float-right">&#xe608;
                 </i></li>
             </a>
-            <a href="#" class="nav-a">
+            <a href="#airSchedul-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i
                         class="iconfont float-right">&#xe608;
                 </i></li>
             </a>
+            <ul class="nav-child-list" id="airSchedul-manage">
+                <a href="#">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>增加航班信息</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>航空公司所有航班</span></li>
+                </a>
+                <a href="#">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>航空公司已有航班</span></li>
+                </a>
+            </ul>
             <a href="#airCompany-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe605;</i><span class="list-title">航空公司管理</span><i
                         class="iconfont float-right">&#xe608;

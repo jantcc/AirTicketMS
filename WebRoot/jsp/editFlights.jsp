@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
-    <header>
-                <div align="center">
-           <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
-            </div>
-    </header>
+<header>
+    <div align="center">
+        <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
+    </div>
+</header>
 <div class="container">
-           <aside>
+    <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
         <ul class="nav-bar-container">
             <a href="bgindex.jsp" class="nav-a">
@@ -64,7 +64,7 @@
             <ul class="nav-child-list" id="airCompany-manage">
                 <a href="addCompany.jsp" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li></a>
                 <a href="showCompany" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li></a>
-                <a href="showCompany?locationurl=companyhaveplane" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司已有机型</span></li></a>           		
+                <a href="showCompany?locationurl=companyhaveplane" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司已有机型</span></li></a>
             </ul>
             <a href="#plantType-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i
@@ -72,8 +72,8 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="plantType-manage">
-               <a href="showCompanyName"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加机型</span></li></a>
-               <a href="showAllPlaneModel"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li></a>
+                <a href="showCompanyName"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加机型</span></li></a>
+                <a href="showAllPlaneModel"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li></a>
             </ul>
             <a href="#" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i
@@ -95,7 +95,7 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>添加航班</span>
+            <span>编辑航班</span>
         </div>
         <div class="content-title">
             <div class="flag">
@@ -133,45 +133,45 @@
                 <label>到达机场:</label> <input type="text">
             </p>
             <p>
-                <label>出发时间:</label> <input type="text" 
-  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
-  class="Wdate" >
+                <label>出发时间:</label> <input type="text"
+                                            onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+                                            class="Wdate" >
             </p>
             <p>
-                <label>到达时间:</label> <input type="text" 
-  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
-  class="Wdate" >
+                <label>到达时间:</label> <input type="text"
+                                            onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+                                            class="Wdate" >
             </p>
-            	<p>
+            <p>
                 <label>头等舱价格:</label> <input type="text"  name=""
-												 />
-			</p>
-            	<p>
-				<label>公务舱价格:</label> <input type="text"  name=""
-												 />
-		    </p>
-				<p>
-				<label>经济舱价格:</label> <input type="text"  name=""
-												 />
-			</p>
-				<p>
-				<label>机型:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<select name="planeModelCode" style="width:290px">
-					<s:iterator value="#session.allPlaneModel">
-							<option value="<s:property value="planeModelCode"/>"><s:property
-										value="planeModelCode" />
-								</option>
-					  </s:iterator>
-								</select>
-			</p>
-				<p align="center" style="margin-top: 5px;">
-					<input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
-					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;" value="添加">
-				</p>
+            />
+            </p>
+            <p>
+                <label>公务舱价格:</label> <input type="text"  name=""
+            />
+            </p>
+            <p>
+                <label>经济舱价格:</label> <input type="text"  name=""
+            />
+            </p>
+            <p>
+                <label>机型:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="planeModelCode" style="width:290px">
+                    <s:iterator value="#session.allPlaneModel">
+                        <option value="<s:property value="planeModelCode"/>"><s:property
+                                value="planeModelCode" />
+                        </option>
+                    </s:iterator>
+                </select>
+            </p>
+            <p align="center" style="margin-top: 5px;">
+                <input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
+                <input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;" value="保存">
+            </p>
         </div>
     </div>
 </div>
 <script src="../js/dashboard.js"></script>
-<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script>
 </body>
 </html>

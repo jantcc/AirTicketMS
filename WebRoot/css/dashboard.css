@@ -100,7 +100,9 @@ a {
 #airFlights-manage:target {
     display: block;
 }
-
+#airSchedul-manage:target {
+    display: block;
+}
 .nav-child-list > .nav-list {
     background-color: #fff;
     border-bottom: 1px solid #dcdcdc;
