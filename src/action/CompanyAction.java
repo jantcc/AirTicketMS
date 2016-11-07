@@ -170,7 +170,7 @@ public class CompanyAction extends ActionSupport {
 		String locationurl = ServletActionContext.getRequest().getParameter("locationurl");
 		List<Flights> list = flightService.findByCustom(flights.getStartpoint(), flights.getEndpoint(), flights.getStarttime().toString().substring(0,10));
 		ActionContext.getContext().getSession().put("flightlist",list); 
-		if(list==null && "flights".equals(locationurl)){
+		if(list.size()==0 && "flights".equals(locationurl)){
 			addActionMessage("未找到该行程的航班记录,请重新输入！"); 
 			return "error1";
 		}

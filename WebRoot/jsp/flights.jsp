@@ -93,7 +93,7 @@
                 	</td>
                 	<td style="border-right: none; text-align: center"><span>------></span></td>
                     <td style="width: 100px">
-                         <p><s:property value="#flight.endpoint"/><s:property value="#flight.startairport"/></p>
+                         <p><s:property value="#flight.endpoint"/><s:property value="#flight.endairport"/></p>
                 		 <span><s:property value="#flight.endtime.toString().substring(10,19)"/></span>
                 	</td>
                 	<s:iterator value="#session.plist" id="planemodel">
@@ -103,7 +103,7 @@
                     <td style="width: 86px"><span><s:property value="#planemodel.economyclassnumber"/></span></td>
                   </s:if>
                     </s:iterator>
-                    <td style="width: 70px;"><span><i style="cursor: pointer" class="iconfont">&#xe616;</i></span></td>
+                    <td style="width: 70px;"><span><i style="cursor: pointer" title="预定" class="iconfont">&#xe616;</i></span></td>
                 	</tr>
                 </s:iterator>
             </table>
