@@ -55,11 +55,11 @@
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>增加航班信息</span></li>
                 </a>
-                <a href="#">
+                <a href="showFlights">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>航空公司所有航班</span></li>
                 </a>
-                <a href="#">
+                <a href="alreadyPlants.jsp">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>航空公司已有航班</span></li>
                 </a>

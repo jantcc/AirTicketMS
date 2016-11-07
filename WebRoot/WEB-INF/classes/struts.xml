@@ -64,7 +64,18 @@
 		</action>
 		<action name="addFlights" class="CompanyAction" method="addFlights">
 
-			<result type="redirect" name="success">jsp.jsp</result>
+			<result type="redirect" name="success">/jsp/bgindex.jsp</result>
+
+		</action>
+	
+		<action name="showFlights" class="CompanyAction" method="showFlights">
+
+			<result type="redirect" name="success">/jsp/flightsinfo.jsp</result>
+
+		</action>
+			<action name="showFlightscustom" class="CompanyAction" method="showFlightscustom">
+
+			<result type="redirect" name="success">/jsp/alreadyPlants.jsp</result>
 
 		</action>
 	</package>

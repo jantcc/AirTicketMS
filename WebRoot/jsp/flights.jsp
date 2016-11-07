@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Flights</title>
@@ -40,7 +43,7 @@
             <span>航班选择</span>
         </nav>
 
-        <aside>
+        <aside style="margin-left: 360px">
             <ul>
                 <li class="form-nav-list">
                     <span>起始地:</span>
@@ -56,31 +59,10 @@
                     <span>时间:</span>
                     <input type="text" value="2013/08/10" name="day" id="day" class="input date">
                 </li>
-                <li class="form-nav-list">
-                    <span>航空公司:</span>
-                    <input type="text" class="input flightNumber" name="companyName" id="companyName" value="山东航空">
-                </li>
-                <li class="form-nav-list">
-                    <span>航空号:</span>
-                    <input type="text" class="input flightNumber" name="flightNumber" id="flightNumber"
-                           value="1010">
-                </li>
                 <input type="button" name="search" value="搜 索" id="btn_flight_search">
 
             </ul>
         </aside>
-        <div class="reach-place">
-            <div class="reach-title">
-                <h2>选择去程</h2>
-            </div>
-            <div class="order-Date">
-                <span>预定日期</span><input type="date"><button>查询</button>
-                <p style="margin: 50px 0 0 0">
-                    当前<span class="num">12</span>条符合条件
-                </p>
-            </div>
-        </div>
-
         <div class="orders">
             <div class="orders-header">
                 <div class="triangle-left"></div>

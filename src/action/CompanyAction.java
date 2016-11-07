@@ -157,6 +157,18 @@ public class CompanyAction extends ActionSupport {
 	}
 	public String addFlights(){
 		flightService.addFlights(flights);
+		carbinprice.setFlightid(flights.getFlightid());
+		carbinpriceService.save(carbinprice);
+		return "success";
+	}
+	public String showFlights(){
+		List<Flights> list = flightService.findAll();
+		ActionContext.getContext().getSession().put("flightlist",list); 
+		return "success";
+	}
+	public String showFlightscustom(){
+		List<Flights> list = flightService.findByCustom(flights.getStartpoint(), flights.getEndpoint(), flights.getStarttime().toString().substring(0,10));
+		ActionContext.getContext().getSession().put("flightlist",list); 
 		return "success";
 	}
 }

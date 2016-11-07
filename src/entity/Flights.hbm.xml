@@ -11,7 +11,7 @@
             <generator class="identity" />
         </id>
         <property name="flightid" type="java.lang.String">
-            <column name="flightid" length="50" not-null="true" unique="true" />
+            <column name="flightid" length="50" not-null="true" />
         </property>
         <property name="startpoint" type="java.lang.String">
             <column name="startpoint" length="50" not-null="true" />
