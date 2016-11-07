@@ -42,7 +42,7 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airSchedul-manage">
-                <a href="#">
+                <a href="showCompany?locationurl=addFlights">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>增加航班信息</span></li>
                 </a>
@@ -91,6 +91,7 @@
             </ul>
         </ul>
     </aside>
+    <form method="post" action="addFlights">
     <div class="content">
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
@@ -105,10 +106,10 @@
                 <h2>请选择航空公司</h2>
             </div>
             <div class="selectBox">
-                <select name="companyName" id="addFlights">
-                    <option value="中国国航">中国国航</option>
-                    <option value="山东航空">山东航空</option>
-                    <option value="四川航空">四川航空</option>
+                <select name="flights.companyname" id="addFlights">            
+                    <s:iterator value="#session.list" id="company">
+                    	<option value="<s:property value="#company.companyname"/>"><s:property value="#company.companyname"/></option>
+                    </s:iterator>
                 </select>
                 <i class="iconfont">&#xe615;</i>
             </div>
@@ -118,58 +119,59 @@
         <div class="addFlights-form">
             <div class="form-header"><span>添加航班</span></div>
             <p>
-                <label>航班号:</label> <input type="text">
+                <label>航班号:</label> <input type="text" name="flights.flightid">
             </p>
             <p>
-                <label>出发地:</label> <input type="text">
+                <label>出发地:</label> <input type="text" name="flights.startpoint">
             </p>
             <p>
-                <label>到达地:</label> <input type="text">
+                <label>到达地:</label> <input type="text" name="flights.endpoint">
             </p>
             <p>
-                <label>出发机场:</label> <input type="text">
+                <label>出发机场:</label> <input type="text" name="flights.startairport">
             </p>
             <p>
-                <label>到达机场:</label> <input type="text">
+                <label>到达机场:</label> <input type="text" name="flights.endairport">
             </p>
             <p>
-                <label>出发时间:</label> <input type="text" 
-  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+                <label>出发时间:</label> <input type="text" name="flights.starttime"
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss'})"
   class="Wdate" >
             </p>
             <p>
-                <label>到达时间:</label> <input type="text" 
-  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss'})"
+                <label>到达时间:</label> <input type="text" name="flights.endtime"
+  onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss'})"
   class="Wdate" >
             </p>
             	<p>
-                <label>头等舱价格:</label> <input type="text"  name=""
+                <label>头等舱价格:</label> <input type="text"  name="carbinprice.firstprice"
 												 />
 			</p>
             	<p>
-				<label>公务舱价格:</label> <input type="text"  name=""
+				<label>公务舱价格:</label> <input type="text"  name="carbinprice.economyprice"
 												 />
 		    </p>
 				<p>
-				<label>经济舱价格:</label> <input type="text"  name=""
+				<label>经济舱价格:</label> <input type="text"  name="carbinprice.businessprice"
 												 />
 			</p>
 				<p>
-				<label>机型:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<select name="planeModelCode" style="width:290px">
-					<s:iterator value="#session.allPlaneModel">
-							<option value="<s:property value="planeModelCode"/>"><s:property
-										value="planeModelCode" />
+				<label>机型:</label> &nbsp;&nbsp;
+				<select name="flights.planemodelcode" style="width:290px">
+					<s:iterator value="#session.planemodellist" id="plist">
+							<option value="<s:property value="#plist.planemodelcode"/>"><s:property
+										value="#plist.planemodelcode" />
 								</option>
 					  </s:iterator>
 								</select>
 			</p>
 				<p align="center" style="margin-top: 5px;">
-					<input name="" value="${company.companyName }" hidden="hidden" type="text" style="display: none;">
+					<input name="" value="" hidden="hidden" type="text" style="display: none;">
 					<input type="submit" class="addFlights-submit" style="width: 80px;height: 30px;" value="添加">
 				</p>
         </div>
     </div>
+    </form>
 </div>
 <script src="../js/dashboard.js"></script>
 <script type="text/javascript" src="../js/My97DatePicker/WdatePicker.js"></script> 

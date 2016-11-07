@@ -51,7 +51,7 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airSchedul-manage">
-                <a href="#">
+                <a href="showCompany?locationurl=addFlights">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>增加航班信息</span></li>
                 </a>

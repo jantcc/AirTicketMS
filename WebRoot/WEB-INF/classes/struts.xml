@@ -39,6 +39,8 @@
 			<result type="redirect" name="success">/jsp/airCompanyInfo.jsp</result>
 		
 			<result type="redirect" name="successtocompanyhaveplane">/jsp/companyhaveplane.jsp</result>
+		
+			<result type="redirect" name="successtoaddflights">/jsp/addFlights.jsp</result>
 		</action>
 			<action name="showCompanyName" class="CompanyAction" method="showCompanyName">
 
@@ -58,6 +60,11 @@
 		<action name="showCompanyHaveandHaventModel" class="CompanyAction" method="showCompanyHaveandHaventModel">
 
 			<result type="redirect" name="success">/jsp/companyhaveplane.jsp</result>
+
+		</action>
+		<action name="addFlights" class="CompanyAction" method="addFlights">
+
+			<result type="redirect" name="success">jsp.jsp</result>
 
 		</action>
 	</package>

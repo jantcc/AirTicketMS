@@ -47,6 +47,12 @@
 	<bean id="planemodelDao" class="dao.Impl.PlanemodelDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="flightDao" class="dao.Impl.FlightDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="carbinpriceDao" class="dao.Impl.CarbinpriceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	<!-- Service配置 -->
 	<bean id="userService" class="service.Impl.UserServiceImpl">
 	 <property name="userDao" ref="userDao"></property>
@@ -59,6 +65,12 @@
 	</bean>
 	<bean id="planemodelService" class="service.Impl.PlanemodelServiceImpl">
 	 <property name="planemodelDao" ref="planemodelDao"></property>
+	</bean>
+	<bean id="flightService" class="service.Impl.FlightsServiceImpl">
+	 <property name="flightDao" ref="flightDao"></property>
+	</bean>
+	<bean id="carbinpriceService" class="service.Impl.CarbinpriceServiceImpl">
+	 <property name="carbinpriceDao" ref="carbinpriceDao"></property>
 	</bean>
 	
 	<bean id="LoginServer" class="action.LoginAction" scope="prototype">
@@ -74,6 +86,8 @@
 			<property name="companyService" ref="companyService"></property>
 			<property name="discountService" ref="discountService"></property>
 			<property name="planemodelService" ref="planemodelService"></property>
+			<property name="flightService" ref="flightService"></property>
+			<property name="carbinpriceService" ref="carbinpriceService"></property>
 	</bean>
 	
 </beans>

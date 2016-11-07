@@ -6,24 +6,44 @@ import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
+import service.CarbinpriceService;
 import service.CompanyService;
 import service.DiscountService;
+import service.FlightService;
 import service.PlanemodelService;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import entity.Carbinprice;
 import entity.Company;
 import entity.Discount;
+import entity.Flights;
 import entity.Planemodel;
 
 public class CompanyAction extends ActionSupport {
 	private Company company;
 	private Discount discount;
 	private Planemodel planemodel;
+	private Flights flights;
+	private Carbinprice carbinprice;
 	private DiscountService discountService;
 	private CompanyService companyService;
 	private PlanemodelService planemodelService;
+	private FlightService flightService;
+	private CarbinpriceService carbinpriceService;
+	public Carbinprice getCarbinprice() {
+		return carbinprice;
+	}
+	public void setCarbinprice(Carbinprice carbinprice) {
+		this.carbinprice = carbinprice;
+	}
+	public Flights getFlights() {
+		return flights;
+	}
+	public void setFlights(Flights flights) {
+		this.flights = flights;
+	}
 	public Company getCompany() {
 		return company;
 	}
@@ -63,6 +83,19 @@ public class CompanyAction extends ActionSupport {
 	public void setPlanemodelService(PlanemodelService planemodelService) {
 		this.planemodelService = planemodelService;
 	}
+	
+	public FlightService getFlightService() {
+		return flightService;
+	}
+	public void setFlightService(FlightService flightService) {
+		this.flightService = flightService;
+	}
+	public CarbinpriceService getCarbinpriceService() {
+		return carbinpriceService;
+	}
+	public void setCarbinpriceService(CarbinpriceService carbinpriceService) {
+		this.carbinpriceService = carbinpriceService;
+	}
 	public String addCompany(){
 		companyService.save(company);
 		setCompanyDiscout();
@@ -80,7 +113,12 @@ public class CompanyAction extends ActionSupport {
 		ActionContext.getContext().getSession().put("list",list);  
 		if("companyhaveplane".equals(locationurl)){
 			return "successtocompanyhaveplane";
-		}else{
+		}else if("addFlights".equals(locationurl)){
+			List<Planemodel> planemodels  = planemodelService.FindAll();
+			ActionContext.getContext().getSession().put("planemodellist",planemodels);  
+			return "successtoaddflights";
+		}
+		else{
 			return "success";
 		}
 	}
@@ -115,6 +153,10 @@ public class CompanyAction extends ActionSupport {
 		ActionContext.getContext().getSession().put("companyName",pcompany.getCompanyname()); 
 		ActionContext.getContext().getSession().put("canaddlist",list);  		
 		ActionContext.getContext().getSession().put("alreadyhavelist",alreadyhaveList);  
+		return "success";
+	}
+	public String addFlights(){
+		flightService.addFlights(flights);
 		return "success";
 	}
 }
