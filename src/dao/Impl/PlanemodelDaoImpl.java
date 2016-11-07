@@ -1,5 +1,6 @@
 package dao.Impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -38,6 +39,24 @@ public class PlanemodelDaoImpl implements PlanemodelDao {
 			List<Planemodel> list = query.list();
 			hu.closeSession(session);
 			return list;
+			}else{
+				hu.closeSession(session);
+				return null;
+			}
+	}
+	public Planemodel findBycode(String planemodelcode) {
+		// TODO Auto-generated method stub
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		String hql = "from Planemodel as p where p.planemodelcode=?";
+		Query query = session.createQuery(hql);
+		query.setString(0, planemodelcode);
+		List<Planemodel> list = query.list();
+		Iterator<Planemodel> iterator = list.iterator();
+		if(iterator.hasNext()){
+			Planemodel  planemodel= iterator.next();
+			hu.closeSession(session);
+			return planemodel;
 			}else{
 				hu.closeSession(session);
 				return null;

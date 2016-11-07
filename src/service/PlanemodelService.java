@@ -8,4 +8,5 @@ public interface PlanemodelService {
 	
 	void addPlaneModel(Planemodel planemodel);
 	List<Planemodel> FindAll();
+	Planemodel findBycode(String planemodelcode);
 }

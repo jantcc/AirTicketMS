@@ -167,8 +167,25 @@ public class CompanyAction extends ActionSupport {
 		return "success";
 	}
 	public String showFlightscustom(){
+		String locationurl = ServletActionContext.getRequest().getParameter("locationurl");
 		List<Flights> list = flightService.findByCustom(flights.getStartpoint(), flights.getEndpoint(), flights.getStarttime().toString().substring(0,10));
 		ActionContext.getContext().getSession().put("flightlist",list); 
+		if(list==null && "flights".equals(locationurl)){
+			addActionMessage("未找到该行程的航班记录,请重新输入！"); 
+			return "error1";
+		}
+		if("flights".equals(locationurl)){
+			Iterator<Flights> iterator = list.iterator();
+			List<Planemodel> plist = new ArrayList<Planemodel>();
+			while(iterator.hasNext()){
+				Flights flights = iterator.next();
+				Planemodel planemodel = planemodelService.findBycode(flights.getPlanemodelcode());
+				plist.add(planemodel);
+			}
+			ActionContext.getContext().getSession().put("plist",plist); 
+			return "successtoflights";
+		}else{
 		return "success";
+		}
 	}
 }

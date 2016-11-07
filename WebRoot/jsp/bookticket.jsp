@@ -37,7 +37,7 @@
     </nav>
 </div>
 
-	<form action="">
+	<form action="showFlightscustom?locationurl=flights" method="post">
 <div class="white">
 <div class="buttom">
 <p class="book">机票预订</p>
@@ -48,7 +48,7 @@
     <div class="citychoose">
     <div class="startplace">
         <p>出发地</p>
-        <input type="text" class="search">
+        <input type="text" class="search" name="flights.startpoint">
         <i class="position">&#xe652;</i>
         <p style="margin-top: 30px;">时间</p>
         <input type="text" name="flights.starttime"
@@ -58,7 +58,7 @@
       </div>
     <div class="endplace">
         <p>目的地</p>
-        <input type="text" class="search">
+        <input type="text" class="search" name="flights.endpoint">
         <i class="positiontwo">&#xe652;</i>
     </div>
     </div>
@@ -77,7 +77,12 @@
         $('.search').kuCity();
         $('.searchend').kuCity();
     });
-    </script>
+
+var msg="${actionMessages[0]}";
+if(msg!=""){
+alert(msg);
+}
+</script>
 
 </body>
 </html>

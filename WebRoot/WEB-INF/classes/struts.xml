@@ -76,7 +76,10 @@
 			<action name="showFlightscustom" class="CompanyAction" method="showFlightscustom">
 
 			<result type="redirect" name="success">/jsp/alreadyPlants.jsp</result>
-
+		
+			<result type="redirect" name="successtoflights">/jsp/flights.jsp</result>
+			
+			<result name="error1">/jsp/bookticket.jsp</result>	
 		</action>
 	</package>
 </struts>

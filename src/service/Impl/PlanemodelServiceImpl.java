@@ -26,5 +26,10 @@ public class PlanemodelServiceImpl implements PlanemodelService {
 		// TODO Auto-generated method stub
 		return this.planemodelDao.FindAll();
 	}
+
+	public Planemodel findBycode(String planemodelcode) {
+		// TODO Auto-generated method stub
+		return this.planemodelDao.findBycode(planemodelcode);
+	}
 	
 }

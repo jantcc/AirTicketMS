@@ -1,5 +1,6 @@
 package dao.Impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -52,8 +53,8 @@ public class FlightDaoImpl implements FlightDao {
 		query.setString(0, startpoint);
 		query.setString(1, endpoint);
 		query.setString(2, time+"%");
-		if(query.list().size()!=0){
-			List<Flights> list = query.list();
+		List<Flights> list = query.list();
+		if(list!=null){
 			hu.closeSession(session);
 			return list;
 			}else{
