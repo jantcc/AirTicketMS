@@ -42,3 +42,13 @@ table {
 	border-spacing: 0;
 }
 
+.clearFlex {
+	zoom: 1;
+}
+.clearFlex:after {
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}

@@ -51,3 +51,64 @@
 .order-Date > input {
     margin: 0 10px 0 10px;
 }
+
+
+
+.orders {
+    float: left;
+    width: 810px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-left: calc(50% - 404px);
+}
+
+.orders-header {
+    position: relative;
+    width: 810px;
+    height: 60px;
+    background-color: #262f72;
+}
+.triangle-left {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #949494;
+    border-left: 10px solid transparent;
+}
+.triangle-right {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #949494;
+    border-right: 10px solid transparent;
+}
+.orders-header table {
+    width: 790px;
+    margin-left: 10px;
+}
+.orders-header > table td {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.orders-header td > span {
+    color: #fff;
+}
+.orders-table {
+    width: 790px;
+    margin-left: 10px;
+}
+.orders-table td {
+    font-size: 16px;
+    height: 60px;
+    line-height: 30px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 30px 0 0 0;
+    background-color: #fff;
+    text-align: center;
+}
