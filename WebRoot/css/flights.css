@@ -1,0 +1,28 @@
+.user-form {
+    background-color: #eee;
+}
+.user-form > aside {
+    width: 232px;
+    height: auto;
+}
+.form-nav-list {
+    width: 220px;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.form-nav-list > span{
+    position: absolute;
+    display: inline-block;
+    font-size: 12px;
+    height: 30px;
+}
+.form-nav-list > input {
+    float: left;
+    display: inline-block;
+    margin: 4px 0 0 60px;
+}
+#btn_flight_search {
+    display: block;
+    margin: 10px auto;
+}

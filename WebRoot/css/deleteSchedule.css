@@ -1,0 +1,8 @@
+.table-form .iconfont {
+    display: inline-block;
+}
+.content-title > p {
+    float: left;
+    font-size: 14px;
+    color: #969696;
+}

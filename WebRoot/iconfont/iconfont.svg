@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Tue Nov  1 19:34:23 2016
+Created by FontForge 20120731 at Mon Nov  7 11:09:02 2016
  By admin
 </metadata>
 <defs>
@@ -37,6 +37,9 @@ t-29.5 0.5h-32l-45 128h-439l-44 -128h-29h-34q-20 0 -45 1q-25 0 -41 9.5t-25.5 23t
 t9.5 -10.5t21.5 -4h37h67h81h80h64h36q23 0 34 12t2 38q-5 13 -9.5 30.5t-9.5 34.5q-5 19 -11 39h-368zM336 498v228q0 11 2.5 23t10 21.5t20.5 15.5t34 6h188q31 0 51.5 -14.5t20.5 -52.5v-227h-327z" />
     <glyph glyph-name="jiantouyou" unicode="&#xe606;" 
 d="M228 -153l55 -55l509 508l-509 509l-55 -55l454 -454zM228 -153z" />
+    <glyph glyph-name="lajitong" unicode="&#xe636;" 
+d="M210 465h608v-27v-512q0 -40 -17 -57t-56 -17h-467q-36 0 -53 16t-17 51v525q0 1 2 21zM371 -36v394h-53v-394h53zM482 -36v394h-53v-394h53zM594 -36v394h-53v-394h53zM705 -36v394h-53v-394h53zM151 529q2 57 3 61q8 41 49 44q10 1 94 2h30v46q0 29 16 47t44 18
+q134 2 266 0q28 0 43 -16.5t16 -45.5v-49q66 0 69 1q58 3 78 -24.5t12 -83.5h-720zM382 634q230 0 262 1q12 0 15.5 5t2 15.5t-1.5 13.5q2 12 -2.5 18.5t-18.5 6.5h-190h-67v-60z" />
     <glyph glyph-name="fangzi" unicode="&#xe607;" 
 d="M816 399v273h-155v-117l-156 156l-428 -428h78v-428h233v350h234v-350h233v428h78l-117 116v0zM427 -146h156v312h-156v-312z" />
     <glyph glyph-name="plane" unicode="&#xe600;" 
