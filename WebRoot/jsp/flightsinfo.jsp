@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>alreadyPlants</title>
@@ -8,7 +11,20 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
-<header></header>
+<header>
+    <div align="center">
+        <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
+    </div>
+    <div align="right">
+        <p>欢迎您,<s:if test='#session.user.authority=="1"'>
+            管理员
+        </s:if>
+            <s:else>高级管理员</s:else>
+            <s:property value="#session.user.username"/></p>
+        <p><a href="userInfo.jsp">返回前台</a></p>
+    </div>
+    <div></div>
+</header>
 <div class="container">
     <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
@@ -37,15 +53,15 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airSchedul-manage">
-                <a href="#">
+                <a href="showCompany?locationurl=addFlights">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>增加航班信息</span></li>
                 </a>
-                <a href="#">
+                <a href="showFlights">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>航空公司所有航班</span></li>
                 </a>
-                <a href="#">
+                <a href="alreadyPlants.jsp">
                     <li class="nav-list" style="background-color: white;"><i class="iconfont">
                         &#xe609;</i><span>航空公司已有航班</span></li>
                 </a>
@@ -57,9 +73,18 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="airCompany-manage">
-                <a href="addCompany.jsp" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加航空公司</span></li></a>
-                <a href="showCompany" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司信息</span></li></a>
-                <a href="showCompany?locationurl=companyhaveplane" ><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>航空公司已有机型</span></li></a>
+                <a href="addCompany.jsp">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>增加航空公司</span></li>
+                </a>
+                <a href="showCompany">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>航空公司信息</span></li>
+                </a>
+                <a href="showCompany?locationurl=companyhaveplane">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>航空公司已有机型</span></li>
+                </a>
             </ul>
             <a href="#plantType-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">机型管理</span><i
@@ -67,8 +92,14 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="plantType-manage">
-                <a href="showCompanyName"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>增加机型</span></li></a>
-                <a href="showAllPlaneModel"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>查询机型信息</span></li></a>
+                <a href="showCompanyName">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>增加机型</span></li>
+                </a>
+                <a href="showAllPlaneModel">
+                    <li class="nav-list" style="background-color: white;"><i class="iconfont">
+                        &#xe609;</i><span>查询机型信息</span></li>
+                </a>
             </ul>
             <a href="#" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe602;</i><span class="list-title">报表打印管理</span><i
@@ -132,19 +163,20 @@
                     <td><span>到达时间</span></td>
                     <td><span>航空公司</span></td>
                     <td><span>操作</span></td>
-
                 </tr>
-                <tr>
-                    <td><span>64</span></td>
-                    <td><span>MU5137</span></td>
-                    <td><span>波音747-400</span></td>
-                    <td><span>上海</span></td>
-                    <td><span>北京</span></td>
-                    <td><span>10:10:00</span></td>
-                    <td><span>13:10:00</span></td>
-                    <td><span>东方航空</span></td>
-                    <td><div style="width: 50px; margin: 0 auto"><i class="iconfont">&#xe616;</i><i class="iconfont" style="margin-left: 10px">&#xe636;</i></div></td>
-                </tr>
+                  <s:iterator value="#session.flightlist" id="flight">
+               <tr>
+               <td><span><s:property value="#flight.id"/></span></td>
+               <td><span><s:property value="#flight.flightid"/></span></td>
+               <td><span><s:property value="#flight.planemodelcode"/></span></td>	
+               <td><span><s:property value="#flight.startairport"/></span></td>
+               <td><span><s:property value="#flight.endairport"/></span></td>
+               <td><span><s:property value="#flight.starttime"/></span></td>
+               <td><span><s:property value="#flight.endtime"/></span></td>
+               <td><span><s:property value="#flight.companyname"/></span></td>
+               <td><div style="width: 50px; margin: 0 auto"><i class="iconfont">&#xe616;</i><i class="iconfont" style="margin-left: 10px">&#xe636;</i></div></td>
+               </tr>         
+               </s:iterator>
             </table>
             <div class="table-footer">
                 <span>Showing 1 to 4 of entries</span>
