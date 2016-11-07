@@ -26,3 +26,28 @@
     display: block;
     margin: 10px auto;
 }
+
+.reach-place {
+    float: left;
+    width: 740px;
+    height: 228px;
+    border: 1px solid #c8c8c8;
+    background-color: #fdfdfd;
+}
+.reach-title {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+.reach-title > h2 {
+    font-size: 24px;
+}
+.order-Date {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0 30px 0;
+}
+.order-Date > input {
+    margin: 0 10px 0 10px;
+}
