@@ -52,7 +52,7 @@ header {
 
 .content {
     padding-top: 36px;
-    background: url("../img/content-back.jpg") repeat-x;
+    background: url("../img/content-back.jpg") repeat;
 }
 
 .user-form {
