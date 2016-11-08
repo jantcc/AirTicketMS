@@ -12,7 +12,7 @@ public class Carbinprice implements java.io.Serializable {
 	private Integer businessprice;
 	private Integer firstprice;
 	private Integer economyprice;
-	private String flightid;
+	private Integer flightid;
 
 	// Constructors
 
@@ -22,7 +22,7 @@ public class Carbinprice implements java.io.Serializable {
 
 	/** full constructor */
 	public Carbinprice(Integer businessprice, Integer firstprice,
-			Integer economyprice, String flightid) {
+			Integer economyprice, Integer flightid) {
 		this.businessprice = businessprice;
 		this.firstprice = firstprice;
 		this.economyprice = economyprice;
@@ -63,11 +63,11 @@ public class Carbinprice implements java.io.Serializable {
 		this.economyprice = economyprice;
 	}
 
-	public String getFlightid() {
+	public Integer getFlightid() {
 		return this.flightid;
 	}
 
-	public void setFlightid(String flightid) {
+	public void setFlightid(Integer flightid) {
 		this.flightid = flightid;
 	}
 

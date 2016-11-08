@@ -83,5 +83,21 @@
 			
 			<result name="error2">/jsp/flights.jsp</result>
 		</action>
+		<action name="showOrders" class="CompanyAction" method="showOrders">
+
+			<result type="redirect" name="success">/jsp/makeOrder.jsp</result>
+
+		</action>
+		<action name="addOrder" class="CompanyAction" method="addOrder">
+
+			<result type="redirect" name="success">/jsp/userInfo.jsp</result>
+
+		</action>
+			<action name="showbookinfo" class="CompanyAction" method="showbookinfo">
+
+			<result type="redirect" name="success">/jsp/ticketOrder.jsp</result>
+
+		</action>
+		
 	</package>
 </struts>

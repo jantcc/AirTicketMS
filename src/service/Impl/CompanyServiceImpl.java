@@ -37,4 +37,9 @@ public class CompanyServiceImpl implements CompanyService {
 		return this.companyDao.find(id);
 	}
 
+	public Company findByname(String companyname) {
+		// TODO Auto-generated method stub
+		return this.companyDao.findByname(companyname);
+	}
+
 }

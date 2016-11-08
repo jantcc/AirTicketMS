@@ -88,9 +88,11 @@
                     </tr>
                 </table>
             </div>
+            <form method="post" action="showOrders">
             <table class="orders-table">
                 <s:iterator value="#session.flightlist" id="flight">
                 <tr>
+                	<input type="hidden"  name="orderflightid" value="<s:property value="#flight.id" />" />
                     <td style="width: 72px"><span><s:property value="#flight.companyname" /></span></td>
                 	<td style="width: 72px"><s:property value="#flight.flightid"/></td>
                 	<td style="width: 100px; border-right: none">
@@ -104,16 +106,16 @@
                 	</td>
                 	<s:iterator value="#session.plist" id="planemodel">
                 	<s:if test="#planemodel.planemodelcode==#flight.planemodelcode">
-                	<td style="width: 90px"><span><s:property value="#planemodel.firstclassnumber"/></span></td>
-                    <td style="width: 86px"><span><s:property value="#planemodel.businessclassnumber"/></span></td>
-                    <td style="width: 86px"><span><s:property value="#planemodel.economyclassnumber"/></span></td>
+                	<td style="width: 90px"><span><s:property value="#planemodel.firstclassnumber"/><input type="radio" name="planemodeltype" value="头等舱"/></span></td>
+                    <td style="width: 86px"><span><s:property value="#planemodel.businessclassnumber"/><input type="radio" name="planemodeltype" value="经济舱"/></span></td>
+                    <td style="width: 86px"><span><s:property value="#planemodel.economyclassnumber"/><input type="radio" name="planemodeltype" value="商务舱"/></span></td>
                   </s:if>
                     </s:iterator>
-                    <td style="width: 70px;"><span><i style="cursor: pointer" title="预定" class="iconfont">&#xe616;</i></span></td>
+                	<td style="width: 70px;"><input type="submit"  value="预定" style="cursor: pointer;" class="iconfont"/></td>
                 	</tr>
                 </s:iterator>
             </table>
-
+			</form>
         </div>
 
     </div>

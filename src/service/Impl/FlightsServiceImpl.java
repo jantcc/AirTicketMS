@@ -33,4 +33,14 @@ public class FlightsServiceImpl implements FlightService {
 		return this.flightDao.findByCustom(startpoint, endpoint, time);
 	}
 
+	public Flights findById(int id) {
+		// TODO Auto-generated method stub
+		return this.flightDao.findById(id);
+	}
+
+	public Flights findIdByFlightId(String flightid) {
+		// TODO Auto-generated method stub
+		return this.flightDao.findIdByFlightId(flightid);
+	}
+
 }

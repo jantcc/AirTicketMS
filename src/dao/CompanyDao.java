@@ -9,4 +9,5 @@ public interface CompanyDao {
 	Company find(String companycode);
 	Company find(int id);
 	List<Company> findAll();
+	Company findByname(String companyname);
 }

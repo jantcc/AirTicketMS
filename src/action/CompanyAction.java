@@ -10,6 +10,7 @@ import service.CarbinpriceService;
 import service.CompanyService;
 import service.DiscountService;
 import service.FlightService;
+import service.OrderService;
 import service.PlanemodelService;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -19,10 +20,13 @@ import entity.Carbinprice;
 import entity.Company;
 import entity.Discount;
 import entity.Flights;
+import entity.Order;
 import entity.Planemodel;
+import entity.User;
 
 public class CompanyAction extends ActionSupport {
 	private Company company;
+	private Order order;
 	private Discount discount;
 	private Planemodel planemodel;
 	private Flights flights;
@@ -32,6 +36,13 @@ public class CompanyAction extends ActionSupport {
 	private PlanemodelService planemodelService;
 	private FlightService flightService;
 	private CarbinpriceService carbinpriceService;
+	private OrderService orderService;
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 	public Carbinprice getCarbinprice() {
 		return carbinprice;
 	}
@@ -70,6 +81,12 @@ public class CompanyAction extends ActionSupport {
 		this.companyService = companyService;
 	}
 	
+	public OrderService getOrderService() {
+		return orderService;
+	}
+	public void setOrderService(OrderService orderService) {
+		this.orderService = orderService;
+	}
 	public DiscountService getDiscountService() {
 		return discountService;
 	}
@@ -157,7 +174,7 @@ public class CompanyAction extends ActionSupport {
 	}
 	public String addFlights(){
 		flightService.addFlights(flights);
-		carbinprice.setFlightid(flights.getFlightid());
+		carbinprice.setFlightid(flightService.findIdByFlightId(flights.getFlightid()).getId());
 		carbinpriceService.save(carbinprice);
 		return "success";
 	}
@@ -189,5 +206,100 @@ public class CompanyAction extends ActionSupport {
 		}else{
 		return "success";
 		}
+	}
+	public String showOrders(){
+		String id = ServletActionContext.getRequest().getParameter("orderflightid");
+		Flights pflights = flightService.findById(Integer.parseInt(id));
+		//可以通过flightid拿到舱位价格
+		ActionContext.getContext().getSession().put("flight",pflights);
+		String type = ServletActionContext.getRequest().getParameter("planemodeltype");
+		ActionContext.getContext().getSession().put("type",type);
+		Carbinprice pCarbinprice = carbinpriceService.findByflightId(pflights.getId());
+		String companyname = pflights.getCompanyname();
+		Company pCompany = companyService.findByname(companyname);
+		//可以通过公司id拿到成人小孩 金牌用户 银牌用户价格
+		Discount pDiscount = discountService.findByCompanyid(pCompany.getId());
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		String usertype = user.getUsertype();
+		if("头等舱".equals(type)){
+			int firstprice = pCarbinprice.getFirstprice();
+			ActionContext.getContext().getSession().put("baseprice",firstprice);
+			if("0".equals(usertype)) {
+				Float childprice=pDiscount.getChilden()*firstprice;
+				ActionContext.getContext().getSession().put("myuserType","普通客户");
+				ActionContext.getContext().getSession().put("childprice",childprice);
+				ActionContext.getContext().getSession().put("adultprice",firstprice);
+			}else if("1".equals(usertype)){
+				Float price=pDiscount.getSilveruser()*firstprice;
+				ActionContext.getContext().getSession().put("myuserType","银牌客户");
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}else{
+				Float price=pDiscount.getGloduser()*firstprice;
+				ActionContext.getContext().getSession().put("myuserType","金牌客户");
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}
+		}else if("经济舱".equals(type)){
+			int businessprice = pCarbinprice.getBusinessprice();
+			ActionContext.getContext().getSession().put("baseprice",businessprice);
+			if("0".equals(usertype)) {
+				Float childprice=pDiscount.getChilden()*businessprice;
+				ActionContext.getContext().getSession().put("childprice",childprice);
+				ActionContext.getContext().getSession().put("adultprice",businessprice);
+			}else if("1".equals(usertype)){
+				Float price=pDiscount.getSilveruser()*businessprice;
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}else{
+				Float price=pDiscount.getGloduser()*businessprice;
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}
+		}else{
+			int economyprice = pCarbinprice.getEconomyprice();
+			ActionContext.getContext().getSession().put("baseprice",economyprice);
+			if("0".equals(usertype)) {
+				Float childprice=pDiscount.getChilden()*economyprice;
+				ActionContext.getContext().getSession().put("childprice",childprice);
+				ActionContext.getContext().getSession().put("adultprice",economyprice);
+			}else if("1".equals(usertype)){
+				Float price=pDiscount.getSilveruser()*economyprice;
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}else{
+				Float price=pDiscount.getGloduser()*economyprice;
+				ActionContext.getContext().getSession().put("childprice",price);
+				ActionContext.getContext().getSession().put("adultprice",price);
+			}
+		}
+		return "success";
+	}
+	public String addOrder(){
+		String flightid = ServletActionContext.getRequest().getParameter("myflightid");
+		Flights pflights = flightService.findIdByFlightId(flightid);
+		String age = ServletActionContext.getRequest().getParameter("age");
+		String adultprice = ServletActionContext.getRequest().getParameter("myadultprice");
+		String childprice = ServletActionContext.getRequest().getParameter("mychildprice");
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		order.setUsername(user.getUsername());
+		if("成人".equals(age)) {order.setPrice(adultprice);}
+		else{
+				order.setPrice(childprice);
+		}
+		order.setFlightid(pflights.getFlightid());
+		order.setStartpoint(pflights.getStartpoint());
+		order.setEndpoint(pflights.getEndpoint());
+		order.setStarttime(pflights.getStarttime());
+		order.setEndtime(pflights.getEndtime());
+		order.setOrderstatus("待付款");
+		orderService.save(order);
+		return "success";
+	}
+	public String showbookinfo(){
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> list = orderService.findByUsername(user.getUsername());
+		
+		return "success";
 	}
 }

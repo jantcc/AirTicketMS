@@ -1,5 +1,6 @@
 package dao.Impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -11,6 +12,7 @@ import utils.HibernateUtils;
 
 import dao.CompanyDao;
 import entity.Company;
+import entity.Flights;
 
 public class CompanyDaoImpl implements CompanyDao {
 	private SessionFactory sessionFactory;
@@ -65,6 +67,24 @@ public class CompanyDaoImpl implements CompanyDao {
 		Query query = session.createQuery(hql);
 		if(query.list().size()!=0){
 			Company company = (Company) query.list().get(0);
+			hu.closeSession(session);
+			return company;
+			}else{
+				hu.closeSession(session);
+				return null;
+			}
+	}
+	public Company findByname(String companyname) {
+		// TODO Auto-generated method stub
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		String hql = "from Company as c where c.companyname=?";
+		Query query = session.createQuery(hql);
+		query.setString(0, companyname);
+		List<Company> list = query.list();
+		Iterator<Company> iterator = list.iterator();
+		if(iterator.hasNext()){
+			Company  company= iterator.next();
 			hu.closeSession(session);
 			return company;
 			}else{

@@ -20,4 +20,9 @@ public class CarbinpriceServiceImpl implements CarbinpriceService {
 		this.carbinpriceDao.save(carbinprice);
 	}
 
+	public Carbinprice findByflightId(int flightid) {
+		// TODO Auto-generated method stub
+		return this.carbinpriceDao.findByflightId(flightid);
+	}
+
 }

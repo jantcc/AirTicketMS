@@ -1,5 +1,6 @@
 package dao.Impl;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,37 +11,37 @@ import org.hibernate.Transaction;
 
 import utils.HibernateUtils;
 
-import dao.CarbinpriceDao;
-import entity.Carbinprice;
+import dao.OrderDao;
 import entity.Flights;
+import entity.Order;
+import entity.Planemodel;
 
-public class CarbinpriceDaoImpl implements CarbinpriceDao {
+public class OrderDaoImpl implements OrderDao {
 	private SessionFactory sessionFactory;
 	public void setSessionFactory(SessionFactory sessionFactory){
 	    this.sessionFactory = sessionFactory;
+
 	}
-	public void save(Carbinprice carbinprice) {
-		// TODO Auto-generated method stub
+	public void save(Order order) {
 		HibernateUtils hu = new HibernateUtils();
 		Session session = hu.getSession();
 		Transaction ts = session.beginTransaction();
-		session.save(carbinprice);
+		session.save(order);
 		ts.commit();
 		hu.closeSession(session);
+		
 	}
-	public Carbinprice findByflightId(int flightid) {
+	public List<Order> findByUsername(String username) {
 		// TODO Auto-generated method stub
 		HibernateUtils hu = new HibernateUtils();
 		Session session = hu.getSession();
-		String hql = "from Carbinprice as c where c.flightid=?";
+		String hql = "from Order as o where o.username=?";
 		Query query = session.createQuery(hql);
-		query.setInteger(0, flightid);
-		List<Carbinprice> list = query.list();
-		Iterator<Carbinprice> iterator = list.iterator();
-		if(iterator.hasNext()){
-			Carbinprice  carbinprice= iterator.next();
+		query.setString(0, username);
+		List<Order> list = query.list();
+		if(list!=null){
 			hu.closeSession(session);
-			return carbinprice;
+			return list;
 			}else{
 				hu.closeSession(session);
 				return null;

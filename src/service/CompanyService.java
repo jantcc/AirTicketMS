@@ -9,4 +9,5 @@ public interface CompanyService {
 	Company find(String companycode);
 	Company find(int id);
 	List<Company> findAll();
+	Company findByname(String companyname);
 }

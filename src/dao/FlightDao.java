@@ -8,4 +8,6 @@ public interface FlightDao {
 	void addFlights(Flights flight);
 	List<Flights> findAll();
 	List<Flights> findByCustom(String startpoint,String endpoint,String time);
+	Flights findById(int id);
+	Flights findIdByFlightId(String flightid);
 }

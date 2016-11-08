@@ -28,6 +28,7 @@
 		<mapping resource="entity/Planemodel.hbm.xml" />
 		<mapping resource="entity/Carbinprice.hbm.xml" />
 		<mapping resource="entity/Flights.hbm.xml" />
+		<mapping resource="entity/Order.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

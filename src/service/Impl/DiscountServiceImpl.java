@@ -20,4 +20,9 @@ public class DiscountServiceImpl implements DiscountService {
 		this.discountDao.save(discout);
 	}
 
+	public Discount findByCompanyid(int id) {
+		// TODO Auto-generated method stub
+		return this.discountDao.findByCompanyid(id);
+	}
+
 }

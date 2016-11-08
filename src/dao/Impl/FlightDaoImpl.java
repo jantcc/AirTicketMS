@@ -13,6 +13,7 @@ import utils.HibernateUtils;
 import dao.FlightDao;
 import entity.Company;
 import entity.Flights;
+import entity.Planemodel;
 
 public class FlightDaoImpl implements FlightDao {
 	private SessionFactory sessionFactory;
@@ -57,6 +58,42 @@ public class FlightDaoImpl implements FlightDao {
 		if(list!=null){
 			hu.closeSession(session);
 			return list;
+			}else{
+				hu.closeSession(session);
+				return null;
+			}
+	}
+	public Flights findById(int id) {
+		// TODO Auto-generated method stub
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		String hql = "from Flights as f where f.id=?";
+		Query query = session.createQuery(hql);
+		query.setInteger(0, id);
+		List<Flights> list = query.list();
+		Iterator<Flights> iterator = list.iterator();
+		if(iterator.hasNext()){
+			Flights  flights= iterator.next();
+			hu.closeSession(session);
+			return flights;
+			}else{
+				hu.closeSession(session);
+				return null;
+			}
+	}
+	public Flights findIdByFlightId(String flightid) {
+		// TODO Auto-generated method stub
+		HibernateUtils hu = new HibernateUtils();
+		Session session = hu.getSession();
+		String hql = "from Flights as f where f.flightid=?";
+		Query query = session.createQuery(hql);
+		query.setString(0, flightid);
+		List<Flights> list = query.list();
+		Iterator<Flights> iterator = list.iterator();
+		if(iterator.hasNext()){
+			Flights  flights= iterator.next();
+			hu.closeSession(session);
+			return flights;
 			}else{
 				hu.closeSession(session);
 				return null;

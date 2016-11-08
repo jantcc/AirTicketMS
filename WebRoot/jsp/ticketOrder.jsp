@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <head>
     <meta charset="UTF-8">
     <title>ticketOrder</title>
@@ -12,10 +13,8 @@
 
 <header>
     <div class="loginBox">
-        <p>欢迎您,
-            <s:property value="#session.user.username"/>
-        </p>
-        <a href="#">进入后台</a>
+        <p>欢迎您,<s:property value="#session.user.username"/></p>
+        <a href="bgindex.jsp">进入后台</a>
     </div>
 </header>
 <div class="sub-header">
@@ -28,7 +27,7 @@
                 <span>我的信息</span>
                 <i class="iconfont">&#xe627;</i>
             </li>
-            <li class="nav-list">
+            <li class="nav-list" onclick="window.location.href='bookticket.jsp'">
                 <span>预定行程</span>
                 <i class="iconfont">&#xe683;</i>
             </li>
@@ -36,6 +35,7 @@
         </ul>
     </nav>
 </div>
+
 <div class="content">
     <div class="user-form">
         <nav class="form-nav">

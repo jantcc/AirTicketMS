@@ -19,8 +19,8 @@
         <property name="economyprice" type="java.lang.Integer">
             <column name="economyprice" />
         </property>
-        <property name="flightid" type="java.lang.String">
-            <column name="flightid" length="50" />
+        <property name="flightid" type="java.lang.Integer">
+            <column name="flightid" />
         </property>
     </class>
 </hibernate-mapping>

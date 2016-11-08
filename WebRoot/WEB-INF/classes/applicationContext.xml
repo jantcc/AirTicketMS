@@ -53,6 +53,9 @@
 	<bean id="carbinpriceDao" class="dao.Impl.CarbinpriceDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="orderDao" class="dao.Impl.OrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	<!-- Service配置 -->
 	<bean id="userService" class="service.Impl.UserServiceImpl">
 	 <property name="userDao" ref="userDao"></property>
@@ -72,6 +75,9 @@
 	<bean id="carbinpriceService" class="service.Impl.CarbinpriceServiceImpl">
 	 <property name="carbinpriceDao" ref="carbinpriceDao"></property>
 	</bean>
+	<bean id="orderService" class="service.Impl.OrderServiceImpl">
+	 <property name="orderDao" ref="orderDao"></property>
+	</bean>
 	
 	<bean id="LoginServer" class="action.LoginAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
@@ -88,6 +94,7 @@
 			<property name="planemodelService" ref="planemodelService"></property>
 			<property name="flightService" ref="flightService"></property>
 			<property name="carbinpriceService" ref="carbinpriceService"></property>
+			<property name="orderService" ref="orderService"></property>
 	</bean>
 	
 </beans>

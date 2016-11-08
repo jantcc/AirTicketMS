@@ -52,7 +52,7 @@ alert(msg);
                     <i class="iconfont">&#xe60a;</i>
                     <span>个人信息</span>
                 </li>
-                <li class="form-nav-list">
+                <a href="showbookinfo"><li class="form-nav-list"></a>
                     <i class="iconfont">&#xe600;</i>
                     <span>机票订单</span>
                 </li>
