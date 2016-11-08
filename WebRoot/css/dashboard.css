@@ -103,6 +103,9 @@ a {
 #airSchedul-manage:target {
     display: block;
 }
+#ticket-info:target {
+    display: block;
+}
 .nav-child-list > .nav-list {
     background-color: #fff;
     border-bottom: 1px solid #dcdcdc;

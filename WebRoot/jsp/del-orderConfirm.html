@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="/struts-tags" prefix="s" %>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>飞机航空后台管理系统</title>
+    <title>alreadyPlants</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/alreadyPlants.css">
+    <link rel="stylesheet" href="../css/deleteSchedule.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
 </head>
 <body>
@@ -14,11 +14,13 @@
         <a href="bgindex.jsp"><font size="10" color="black">飞机航空后台管理系统</font></a>
     </div>
     <div align="right">
-        <p>欢迎您,<s:if test='#session.user.authority=="1"'>
-            管理员
-        </s:if>
+        <p>欢迎您,
+            <s:if test='#session.user.authority=="1"'>
+                管理员
+            </s:if>
             <s:else>高级管理员</s:else>
-            <s:property value="#session.user.username"/></p>
+            <s:property value="#session.user.username"/>
+        </p>
         <p><a href="userInfo.jsp">返回前台</a></p>
     </div>
     <div></div>
@@ -123,8 +125,53 @@
         <div class="content-header">
             <i class="iconfont">&#xe607;</i>
             <i class="iconfont">&#xe606;</i>
-            <span>后台首页</span>
+            <span>订票审核</span>
         </div>
+        <div class="content-title alreadyPlants">
+            <div class="flag">
+                <i class="iconfont">&#xe604;</i>
+            </div>
+            <h2 style="color: #0163c6; float: left; margin: 30px 0 0 10px">退票审核</h2>
+        </div>
+
+        <div class="table-container">
+            <div class="table-container-header"><span>待处理订单</span></div>
+            <table class="table-form" border=0 cellspacing=0 cellpadding=0>
+                <tr>
+                    <td><span>订单号</span></td>
+                    <td><span>客户名</span></td>
+                    <td><span>航班号</span></td>
+                    <td><span>起始地</span></td>
+                    <td><span>到达地</span></td>
+                    <td><span>起飞时间</span></td>
+                    <td><span>到达时间</span></td>
+                    <td><span>乘机人</span></td>
+                    <td><span>乘机人电话</span></td>
+                    <td><span>身份证</span></td>
+                    <td><span>价格</span></td>
+                    <td><span>状态</span></td>
+                </tr>
+                <tr>
+                    <td><span>221</span></td>
+                    <td><span>max</span></td>
+                    <td><span>MU5103</span></td>
+                    <td><span>上海</span></td>
+                    <td><span>广州</span></td>
+                    <td><span>2014-12-06 08:00:00</span></td>
+                    <td><span>2014-12-06 10:00:00</span></td>
+                    <td><span>梁湘明</span></td>
+                    <td><span>13692333014</span></td>
+                    <td><span>513101197211132123</span></td>
+                    <td><span>$1800</span></td>
+                    <td>
+                        <div style="width: 50px; margin: 0 auto"><i class="iconfont" style="color: #0967c7">&#xe60e;</i><i style="color: #0967c7" class="iconfont"
+                                                                                                                           style="margin-left: 10px">
+                            &#xe60d;</i></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
 
     </div>
 </div>
