@@ -208,8 +208,8 @@ public class CompanyAction extends ActionSupport {
 		}
 	}
 	public String showOrders(){
-		String id = ServletActionContext.getRequest().getParameter("orderflightid");
-		Flights pflights = flightService.findById(Integer.parseInt(id));
+		String pid =  ServletActionContext.getRequest().getParameter("myid");
+		Flights pflights = flightService.findById(Integer.parseInt(pid));
 		//可以通过flightid拿到舱位价格
 		ActionContext.getContext().getSession().put("flight",pflights);
 		String type = ServletActionContext.getRequest().getParameter("planemodeltype");
@@ -283,12 +283,14 @@ public class CompanyAction extends ActionSupport {
 		String childprice = ServletActionContext.getRequest().getParameter("mychildprice");
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		order.setUsername(user.getUsername());
-		if("成人".equals(age)) {order.setPrice(adultprice);}
+		if("adult".equals(age)) {order.setPrice(adultprice);}
 		else{
 				order.setPrice(childprice);
 		}
 		order.setFlightid(pflights.getFlightid());
 		order.setStartpoint(pflights.getStartpoint());
+		order.setStartairport(pflights.getStartairport());
+		order.setEndairport(pflights.getEndairport());
 		order.setEndpoint(pflights.getEndpoint());
 		order.setStarttime(pflights.getStarttime());
 		order.setEndtime(pflights.getEndtime());
@@ -299,7 +301,41 @@ public class CompanyAction extends ActionSupport {
 	public String showbookinfo(){
 		User user = (User) ActionContext.getContext().getSession().get("user");
 		List<Order> list = orderService.findByUsername(user.getUsername());
-		
+		ActionContext.getContext().getSession().put("orderlist",list);
+		return "success";
+	}
+	public String showorderconfirm(){
+		List<Order> list = orderService.findAll();
+		ActionContext.getContext().getSession().put("list",list);
+		return "success";
+	}
+	public String showdelorderconfirm(){
+		List<Order> list = orderService.findReturnOrder();
+		ActionContext.getContext().getSession().put("list",list);
+		return "success";
+	}
+	public String delorder(){
+		String id = ServletActionContext.getRequest().getParameter("id");
+		orderService.delOrder(Integer.parseInt(id));
+		return "success";
+	}
+	public String changeorderstatus(){
+		String id = ServletActionContext.getRequest().getParameter("id");
+		orderService.updatestatustoreturn(Integer.parseInt(id));
+		return "success";
+	}
+	public String findOrderById(){
+		String id = ServletActionContext.getRequest().getParameter("myid");
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> list =  orderService.findById(Integer.parseInt(id),user.getUsername());
+		ActionContext.getContext().getSession().put("orderlist",list);
+		return "success";
+	}
+	public String findOrderByDate(){
+		String time = ServletActionContext.getRequest().getParameter("mytime");
+		User user = (User) ActionContext.getContext().getSession().get("user");
+		List<Order> list = orderService.findByDate(time,user.getUsername());
+		ActionContext.getContext().getSession().put("orderlist",list);
 		return "success";
 	}
 }

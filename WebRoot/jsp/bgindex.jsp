@@ -46,8 +46,8 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="ticket-info">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>订票审核</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>退票审核</span></li>
+               <a href="showorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>订票审核</span></li></a> 
+                <a href="showdelorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>退票审核</span></li></a>
             </ul>
             <a href="#airSchedul-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i

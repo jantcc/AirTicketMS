@@ -13,8 +13,11 @@ public class Order implements java.io.Serializable {
 	private Integer id;
 	private String username;
 	private String flightid;
+	private Timestamp orderdate;
 	private String startpoint;
 	private String endpoint;
+	private String startairport;
+	private String endairport;
 	private Timestamp starttime;
 	private Timestamp endtime;
 	private String onplaneuser;
@@ -30,16 +33,42 @@ public class Order implements java.io.Serializable {
 	public Order() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public Order(String username, String flightid, String startpoint,
-			String endpoint, Timestamp starttime, Timestamp endtime,
+			String endpoint, String startairport, String endairport,
+			Timestamp starttime, Timestamp endtime, String onplaneuser,
+			String onplaneuserphone, String onplaneuseridcard, String address,
+			String price, String orderstatus) {
+		this.username = username;
+		this.flightid = flightid;
+		this.startpoint = startpoint;
+		this.endpoint = endpoint;
+		this.startairport = startairport;
+		this.endairport = endairport;
+		this.starttime = starttime;
+		this.endtime = endtime;
+		this.onplaneuser = onplaneuser;
+		this.onplaneuserphone = onplaneuserphone;
+		this.onplaneuseridcard = onplaneuseridcard;
+		this.address = address;
+		this.price = price;
+		this.orderstatus = orderstatus;
+	}
+
+	/** full constructor */
+	public Order(String username, String flightid, Timestamp orderdate,
+			String startpoint, String endpoint, String startairport,
+			String endairport, Timestamp starttime, Timestamp endtime,
 			String onplaneuser, String onplaneuserphone,
 			String onplaneuseridcard, String address, String price,
 			String orderstatus) {
 		this.username = username;
 		this.flightid = flightid;
+		this.orderdate = orderdate;
 		this.startpoint = startpoint;
 		this.endpoint = endpoint;
+		this.startairport = startairport;
+		this.endairport = endairport;
 		this.starttime = starttime;
 		this.endtime = endtime;
 		this.onplaneuser = onplaneuser;
@@ -76,6 +105,14 @@ public class Order implements java.io.Serializable {
 		this.flightid = flightid;
 	}
 
+	public Timestamp getOrderdate() {
+		return this.orderdate;
+	}
+
+	public void setOrderdate(Timestamp orderdate) {
+		this.orderdate = orderdate;
+	}
+
 	public String getStartpoint() {
 		return this.startpoint;
 	}
@@ -90,6 +127,22 @@ public class Order implements java.io.Serializable {
 
 	public void setEndpoint(String endpoint) {
 		this.endpoint = endpoint;
+	}
+
+	public String getStartairport() {
+		return this.startairport;
+	}
+
+	public void setStartairport(String startairport) {
+		this.startairport = startairport;
+	}
+
+	public String getEndairport() {
+		return this.endairport;
+	}
+
+	public void setEndairport(String endairport) {
+		this.endairport = endairport;
 	}
 
 	public Timestamp getStarttime() {

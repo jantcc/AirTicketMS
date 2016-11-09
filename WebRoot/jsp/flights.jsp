@@ -88,11 +88,11 @@
                     </tr>
                 </table>
             </div>
-            <form method="post" action="showOrders">
+            <form method="post" action="showOrders" on>
             <table class="orders-table">
+              <input type="hidden"  id="myid" name="myid" value="" />          
                 <s:iterator value="#session.flightlist" id="flight">
                 <tr>
-                	<input type="hidden"  name="orderflightid" value="<s:property value="#flight.id" />" />
                     <td style="width: 72px"><span><s:property value="#flight.companyname" /></span></td>
                 	<td style="width: 72px"><s:property value="#flight.flightid"/></td>
                 	<td style="width: 100px; border-right: none">
@@ -111,7 +111,7 @@
                     <td style="width: 86px"><span><s:property value="#planemodel.economyclassnumber"/><input type="radio" name="planemodeltype" value="商务舱"/></span></td>
                   </s:if>
                     </s:iterator>
-                	<td style="width: 70px;"><input type="submit"  value="预定" style="cursor: pointer;" class="iconfont"/></td>
+                	<td style="width: 70px;"><input type="submit"  value="预定" style="cursor: pointer;" class="iconfont" onclick="setid(<s:property value="#flight.id" />);"/></td>
                 	</tr>
                 </s:iterator>
             </table>
@@ -126,6 +126,10 @@
 var msg="${actionMessages[0]}";
 if(msg!=""){
 alert(msg);
+}
+function setid(x){
+	var i = document.getElementById("myid");
+	i.value=x;
 }
 </script>
 </body>

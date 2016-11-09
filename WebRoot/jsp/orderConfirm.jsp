@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="/struts-tags" prefix="s" %>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>alreadyPlants</title>
@@ -26,7 +28,7 @@
     <div></div>
 </header>
 <div class="container">
-    <aside>
+ <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
         <ul class="nav-bar-container">
             <a href="bgindex.jsp" class="nav-a">
@@ -48,8 +50,8 @@
                 </i></li>
             </a>
             <ul class="nav-child-list" id="ticket-info">
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>订票审核</span></li>
-                <li class="nav-list"><i class="iconfont">&#xe609;</i><span>退票审核</span></li>
+               <a href="showorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>订票审核</span></li></a> 
+                <a href="showdelorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>退票审核</span></li></a>
             </ul>
             <a href="#airSchedul-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i
@@ -151,24 +153,27 @@
                     <td><span>价格</span></td>
                     <td><span>状态</span></td>
                 </tr>
-                <tr>
-                    <td><span>221</span></td>
-                    <td><span>max</span></td>
-                    <td><span>MU5103</span></td>
-                    <td><span>上海</span></td>
-                    <td><span>广州</span></td>
-                    <td><span>2014-12-06 08:00:00</span></td>
-                    <td><span>2014-12-06 10:00:00</span></td>
-                    <td><span>梁湘明</span></td>
-                    <td><span>13692333014</span></td>
-                    <td><span>513101197211132123</span></td>
-                    <td><span>$1800</span></td>
+                <s:iterator value="#session.list" id="order">
+                	<tr>
+                    <td><span><s:property value="#order.id"/></span></td>
+                    <td><span><s:property value="#order.username"/></span></td>
+                    <td><span><s:property value="#order.flightid"/></span></td>
+                    <td><span><s:property value="#order.startpoint"/></span></td>
+                    <td><span><s:property value="#order.endpoint"/></span></td>
+                    <td><span><s:property value="#order.starttime"/></span></td>
+                    <td><span><s:property value="#order.endtime"/></span></td>
+                    <td><span><s:property value="#order.onplaneuser"/></span></td>
+                    <td><span><s:property value="#order.onplaneuserphone"/></span></td>
+                    <td><span><s:property value="#order.onplaneuseridcard"/></span></td>
+                    <td><span><s:property value="#order.price"/></span></td>
                     <td>
                         <div style="width: 50px; margin: 0 auto"><i class="iconfont" style="color: #0967c7">&#xe60e;</i><i style="color: #0967c7" class="iconfont"
                                                                                                     style="margin-left: 10px">
                             &#xe60d;</i></div>
                     </td>
                 </tr>
+                </s:iterator>
+                
             </table>
         </div>
 

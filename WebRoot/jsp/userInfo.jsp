@@ -52,10 +52,11 @@ alert(msg);
                     <i class="iconfont">&#xe60a;</i>
                     <span>个人信息</span>
                 </li>
-                <a href="showbookinfo"><li class="form-nav-list"></a>
+                <a href="showbookinfo"><li class="form-nav-list">
                     <i class="iconfont">&#xe600;</i>
                     <span>机票订单</span>
                 </li>
+                </a>
                 <li class="form-nav-list" onclick="window.location.href='updatePassword.jsp'">
                     <i class="iconfont">&#xe73f;</i>
                     <span>更改密码</span>

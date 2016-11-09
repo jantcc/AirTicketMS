@@ -31,10 +31,11 @@ alert(msg);
                     <span>我的信息</span>
                     <i class="iconfont">&#xe627;</i>
                 </li>
-                <li class="nav-list">
-                    <span>预定行程</span>
-                    <i class="iconfont">&#xe683;</i>
-                </li>
+                 <li class="nav-list" onclick="window.location.href='bookticket.jsp'">
+                <span>预定行程</span>
+                <i class="iconfont">&#xe683;</i>
+            </li>
+
 
             </ul>
         </nav>

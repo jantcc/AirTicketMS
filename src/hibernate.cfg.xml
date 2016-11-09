@@ -8,6 +8,8 @@
 
 	<session-factory>
 		<property name="myeclipse.connection.profile">Mysql</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<property name="connection.isolation">2</property>
 		<property name="connection.url">
 			jdbc:mysql://localhost:3306/bookflights
 		</property>

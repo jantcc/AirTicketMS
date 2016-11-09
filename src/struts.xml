@@ -98,6 +98,40 @@
 			<result type="redirect" name="success">/jsp/ticketOrder.jsp</result>
 
 		</action>
+		<action name="showorderconfirm" class="CompanyAction" method="showorderconfirm">
+
+			<result type="redirect" name="success">/jsp/orderConfirm.jsp</result>
+
+		</action>
+		<action name="showdelorderconfirm" class="CompanyAction" method="showdelorderconfirm">
+
+			<result type="redirect" name="success">/jsp/del-orderConfirm.jsp</result>
+
+		</action>
+			<action name="delorder" class="CompanyAction" method="delorder">
+
+			<result type="redirectAction" name="success">
+			showdelorderconfirm
+			</result>
+
+		</action>
+		<action name="changeorderstatus" class="CompanyAction" method="changeorderstatus">
+
+			<result type="redirectAction" name="success">
+				showbookinfo
+			</result>
+
+		</action>
+		<action name="findOrderById" class="CompanyAction" method="findOrderById">
+
+			<result type="redirect" name="success">/jsp/ticketOrder.jsp</result>
+
+		</action>
+		<action name="findOrderByDate" class="CompanyAction" method="findOrderByDate">
+
+			<result type="redirect" name="success">/jsp/ticketOrder.jsp</result>
+
+		</action>
 		
 	</package>
 </struts>

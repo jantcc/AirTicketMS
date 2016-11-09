@@ -16,11 +16,20 @@
         <property name="flightid" type="java.lang.String">
             <column name="flightid" length="50" not-null="true" />
         </property>
+        <property name="orderdate" type="java.sql.Timestamp" insert="false">
+            <column name="orderdate" length="19" />
+        </property>
         <property name="startpoint" type="java.lang.String">
             <column name="startpoint" length="50" not-null="true" />
         </property>
         <property name="endpoint" type="java.lang.String">
             <column name="endpoint" length="50" not-null="true" />
+        </property>
+        <property name="startairport" type="java.lang.String">
+            <column name="startairport" length="50" not-null="true" />
+        </property>
+        <property name="endairport" type="java.lang.String">
+            <column name="endairport" length="50" not-null="true" />
         </property>
         <property name="starttime" type="java.sql.Timestamp">
             <column name="starttime" length="19" not-null="true" />

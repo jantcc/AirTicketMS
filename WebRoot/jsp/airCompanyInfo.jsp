@@ -24,7 +24,7 @@
     <div></div>
 </header>
 <div class="container">
-    <aside>
+      <aside>
         <div class="navbar-header"><span>NAVIGATION</span></div>
         <ul class="nav-bar-container">
             <a href="bgindex.jsp" class="nav-a">
@@ -40,11 +40,15 @@
                 <li class="nav-list"><i class="iconfont">&#xe609;</i><span>查询客户信息</span></li>
             </ul>
 
-            <a href="#" class="nav-a">
+            <a href="#ticket-info" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe601;</i><span class="list-title">航班机票管理</span><i
                         class="iconfont float-right">&#xe608;
                 </i></li>
             </a>
+            <ul class="nav-child-list" id="ticket-info">
+               <a href="showorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>订票审核</span></li></a> 
+                <a href="showdelorderconfirm"><li class="nav-list" style="background-color: white;"><i class="iconfont">&#xe609;</i><span>退票审核</span></li></a>
+            </ul>
             <a href="#airSchedul-manage" class="nav-a">
                 <li class="nav-list"><i class="iconfont">&#xe600;</i><span class="list-title">航班信息管理</span><i
                         class="iconfont float-right">&#xe608;

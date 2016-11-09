@@ -39,6 +39,7 @@
                 <input type="text" name="user.phone" placeholder="电话">
                 <input type="text" name="user.email" placeholder="邮件">
                 <button type="submit">提交</button>
+                <button type="button" onclick="window.location.href='index.jsp'">返回上一页</button>
                 <div class="error"><span>+</span></div>
             </form>
         <!-- Javascript -->
