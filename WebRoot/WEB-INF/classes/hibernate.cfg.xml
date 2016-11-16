@@ -11,10 +11,10 @@
 		<property name="hibernate.cache.use_second_level_cache">false</property>
 		<property name="connection.isolation">2</property>
 		<property name="connection.url">
-			jdbc:mysql://localhost:3306/bookflights
+			jdbc:mysql://127.0.0.1:3306/bookflights
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">root</property>
+		<property name="connection.password">315157</property>
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>

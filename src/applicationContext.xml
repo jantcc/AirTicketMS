@@ -9,11 +9,11 @@
 		<!-- 指定连接数据库的驱动 -->
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<!-- 指定连接数据库的URL -->
-		<property name="url" value="jdbc:mysql://localhost:3306/bookflights" />
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/bookflights" />
 		<!-- 指定连接数据库的用户名 -->
 		<property name="username" value="root" />
 		<!-- 指定连接数据库的密码 -->
-		<property name="password" value="root" />
+		<property name="password" value="315157" />
 	</bean>
 	<!-- 配置SessionFactory -->
 	<bean id="sessionFactory"

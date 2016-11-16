@@ -1,5 +1,9 @@
 package dao.Impl;
 
+import java.util.Iterator;
+import java.util.List;
+
+import entity.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,7 +11,6 @@ import org.hibernate.Transaction;
 
 import utils.HibernateUtils;
 import dao.UserDao;
-import entity.User;
 
 public class UserDaoImpl implements UserDao {
 	private SessionFactory sessionFactory;
@@ -28,16 +31,21 @@ public class UserDaoImpl implements UserDao {
 	public User FindUser(String username){
 		HibernateUtils hu = new HibernateUtils();
 		Session session = hu.getSession();
-		String hql = "from User as u where u.username="+username;
+		String hql = "from User as u where u.username=?";
 		Query query = session.createQuery(hql);
-		if(query.list().size()!=0){
-		User user = (User) query.list().get(0);
-		hu.closeSession(session);
-		return user;
+		query.setString(0,username);
+		List<User> list =query.list();
+		Iterator<User> iterator = list.iterator();
+		if(iterator.hasNext()){
+			User  user= iterator.next();
+			hu.closeSession(session);
+			return user;
 		}else{
 			hu.closeSession(session);
 			return null;
 		}
+
+
 	}
 	public void UpdateUser(User user) {
 		HibernateUtils hu = new HibernateUtils();
